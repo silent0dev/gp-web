@@ -361,14 +361,14 @@ h5,
 
 h6,
 .h6 {
-  color: rgba(var(--color-foreground), 0.75);
+  color: rgba(var(--color-foreground), 1);
   margin-block-start: 1.67em;
   margin-block-end: 1.67em;
 }
 
 blockquote {
   font-style: italic;
-  color: rgba(var(--color-foreground), 0.75);
+  color: rgba(var(--color-foreground), 1);
   border-left: 0.2rem solid rgba(var(--color-foreground), 0.2);
   padding-left: 1rem;
 }
@@ -502,7 +502,7 @@ h6:empty {
   text-underline-offset: 0.3rem;
   color: rgb(var(--color-link));
   background-color: transparent;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-family: inherit;
 }
 
@@ -511,7 +511,7 @@ h6:empty {
 }
 
 .link--text:hover {
-  color: rgba(var(--color-foreground), 0.75);
+  color: rgba(var(--color-foreground), 1);
 }
 
 .link-with-icon {
@@ -1490,7 +1490,7 @@ details[open] > .share-button__fallback {
 }
 
 .share-button__fallback button:hover {
-  color: rgba(var(--color-foreground), 0.75);
+  color: rgba(var(--color-foreground), 1);
 }
 
 .share-button__fallback button:hover svg {
@@ -1642,7 +1642,7 @@ details[open] > .share-button__fallback {
   font-style: var(--font-body-style);
   font-weight: var(--font-body-weight);
   font-size: 1.2rem;
-  color: rgba(var(--color-foreground), 0.75);
+  color: rgba(var(--color-foreground), 1);
 }
 
 .field:hover.field:after,
@@ -1744,7 +1744,7 @@ details[open] > .share-button__fallback {
   pointer-events: none;
   position: absolute;
   transition: top var(--duration-short) ease, font-size var(--duration-short) ease;
-  color: rgba(var(--color-foreground), 0.75);
+  color: rgba(var(--color-foreground), 1);
   letter-spacing: 0.1rem;
   line-height: 1.5;
 }
@@ -2480,7 +2480,7 @@ product-info .loading__spinner:not(.hidden) ~ *,
 
 .header__heading-link .h2 {
   line-height: 1;
-  color: rgba(var(--color-foreground), 0.75);
+  color: rgba(var(--color-foreground), 1);
 }
 
 .header__heading-logo {
@@ -2818,9 +2818,9 @@ details[open] > .header__submenu {
 }
 
 .header__menu-item {
-  padding: 1.2rem;
+  padding: 1rem 1.5rem;
   text-decoration: none;
-  color: rgba(var(--color-foreground), 0.75);
+  color: rgba(var(--color-foreground), 1);
 }
 
 .header__menu-item:hover {
@@ -2828,12 +2828,11 @@ details[open] > .header__submenu {
 }
 
 .header__menu-item span {
-  transition: text-decoration var(--duration-short) ease;
+  transition: 0.3s;
 }
 
 .header__menu-item:hover span {
-  text-decoration: underline;
-  text-underline-offset: 0.3rem;
+  font-weight: 600;
 }
 
 details[open] > .header__menu-item {
@@ -2851,8 +2850,7 @@ details[open] > .header__menu-item .icon-caret {
 .header__active-menu-item {
   transition: text-decoration-thickness var(--duration-short) ease;
   color: rgb(var(--color-foreground));
-  text-decoration: underline;
-  text-underline-offset: 0.3rem;
+  font-weight: 600;
 }
 
 .header__menu-item:hover .header__active-menu-item {

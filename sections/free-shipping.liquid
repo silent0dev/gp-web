@@ -1,0 +1,41 @@
+{% style %}
+#section-{{ section.id }}--padding {
+    padding-top: 44px;
+    padding-bottom: 44px;
+}
+@media(max-width: 768px) {
+    #{section-{{ section.id }}--padding {
+        padding-top: 22px;
+        padding-bottom: 22px;
+    }
+}
+{% endstyle %}
+<div class="free-shipping" id="section-{{ section.id }}--padding">
+    <div class="page-width">
+        <div class="rte free-shipping-text">
+            <p><span class="free-shipping-icon">{{ section.settings.icon }}</span>{{ section.settings.text }}</p>
+        </div>
+    </div>
+</div>
+{% schema %}
+{
+    "name": "Free Shipping",
+    "settings": [
+        {
+            "type": "html",
+            "id": "icon",
+            "label": "Icon"
+        },
+        {
+            "type": "text",
+            "id": "text",
+            "label": "Text"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Free Shipping"
+        }
+    ]
+}
+{% endschema %}

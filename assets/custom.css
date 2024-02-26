@@ -54,3 +54,19 @@
         right: 50%;
     }
 }
+
+.free-shipping-text p, .free-shipping-icon {
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.free-shipping-text p {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .free-shipping-text p {
+        justify-content: center;
+    }
+}
