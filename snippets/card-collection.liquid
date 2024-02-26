@@ -1,159 +1,26 @@
-{% comment %}
-  Renders a collection card
-
-  Accepts:
-  - card_collection: {Object} Collection Liquid object
-  - media_aspect_ratio: {String} Size of the product image card. Values are "square" and "portrait". Default is "square" (optional)
-  - columns: {Number}
-  - extend_height: {Boolean} Card height extends to available container space. Default: false (optional)
-  - wrapper_class: {String} Wrapper class for card (optional)
-  - placeholder_image: {String} Placeholder image when collection is empty (optional)
-
-  Usage:
-  {% render 'card-collection' %}
-{% endcomment %}
-
-{%- liquid
-  assign ratio = 1
-  if card_collection.featured_image and media_aspect_ratio == 'portrait'
-    assign ratio = 0.8
-  elsif card_collection.featured_image and media_aspect_ratio == 'adapt'
-    assign ratio = card_collection.featured_image.aspect_ratio
-  endif
-  if ratio == 0 or ratio == null
-    assign ratio = 1
-  endif
-  assign card_color_scheme = settings.card_color_scheme
-  assign card_style = settings.card_style
-  if wrapper_class == null or wrapper_class == 'none'
-    assign card_color_scheme = settings.collection_card_color_scheme
-    assign card_style = settings.collection_card_style
-  endif
--%}
-
-<div class="card-wrapper animate-arrow {% if wrapper_class and wrapper_class != 'none' %}{{ wrapper_class }}{% else %}collection-card-wrapper{% endif %}">
-  <div
-    class="
-      card
-      card--{{ card_style }}
-      {% if card_collection.featured_image %} card--media{% else %} card--text{% endif %}
-      {% if card_style == 'card' %} color-{{ card_color_scheme }} gradient{% endif %}
-      {% if extend_height %} card--extend-height{% endif %}
-      {% if card_collection.featured_image == nil and card_style == 'card' %} ratio{% endif %}
-    "
-    style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
-  >
-    <div
-      class="card__inner {% if card_style == 'standard' %}color-{{ card_color_scheme }} gradient{% endif %}{% if card_collection.featured_image or card_style == 'standard' %} ratio{% endif %}"
-      style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
-    >
-      {%- if card_collection.featured_image -%}
-        <div class="card__media">
-          <div class="media media--transparent media--hover-effect">
-            <img
-              srcset="
-                {%- if card_collection.featured_image.width >= 165 -%}{{ card_collection.featured_image | image_url: width: 165 }} 165w,{%- endif -%}
-                {%- if card_collection.featured_image.width >= 330 -%}{{ card_collection.featured_image | image_url: width: 330 }} 330w,{%- endif -%}
-                {%- if card_collection.featured_image.width >= 535 -%}{{ card_collection.featured_image | image_url: width: 535 }} 535w,{%- endif -%}
-                {%- if card_collection.featured_image.width >= 750 -%}{{ card_collection.featured_image | image_url: width: 750 }} 750w,{%- endif -%}
-                {%- if card_collection.featured_image.width >= 1000 -%}{{ card_collection.featured_image | image_url: width: 1000 }} 1000w,{%- endif -%}
-                {%- if card_collection.featured_image.width >= 1500 -%}{{ card_collection.featured_image | image_url: width: 1500 }} 1500w,{%- endif -%}
-                {%- if card_collection.featured_image.width >= 3000 -%}{{ card_collection.featured_image | image_url: width: 3000 }} 3000w,{%- endif -%}
-                {{ card_collection.featured_image | image_url }} {{ card_collection.featured_image.width }}w
-              "
-              src="{{ card_collection.featured_image | image_url: width: 1500 }}"
-              sizes="
-                (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: columns }}px,
-                (min-width: 750px) {% if columns > 1 %}calc((100vw - 10rem) / 2){% else %}calc(100vw - 10rem){% endif %},
-                calc(100vw - 3rem)
-              "
-              alt="{{ card_collection.featured_image.alt | escape }}"
-              height="{{ card_collection.featured_image.height }}"
-              width="{{ card_collection.featured_image.width }}"
-              loading="lazy"
-              class="motion-reduce"
-            >
-          </div>
-        </div>
-      {%- endif -%}
-      {%- if card_collection == blank -%}
-        <div class="card__media">
-          {{ placeholder_image | placeholder_svg_tag: 'placeholder-svg' }}
-        </div>
-      {%- else -%}
-        <div class="card__content">
-          <div class="card__information">
-            <h3 class="card__heading">
-              <a
-                {% if card_collection == blank %}
-                  role="link" aria-disabled="true"
-                {% else %}
-                  href="{{ card_collection.url }}"
-                {% endif %}
-                class="full-unstyled-link"
-              >
-                {%- if card_collection.title != blank -%}
-                  {{- card_collection.title | escape -}}
-                {%- else -%}
-                  {{ 'onboarding.collection_title' | t }}
-                {%- endif -%}
-                {%- if card_collection.description == blank -%}
-                  <span class="icon-wrap">{% render 'icon-arrow' %}</span>
-                {%- endif %}
-              </a>
-            </h3>
-            {%- if card_collection.description != blank -%}
-              <p class="card__caption">
-                {{- card_collection.description | strip_html | truncatewords: 12 -}}
-                <span class="icon-wrap">&nbsp;{% render 'icon-arrow' %}</span>
-              </p>
-            {%- endif -%}
-          </div>
-        </div>
-      {%- endif -%}
+<div class="card-collection {% if card_collection.image == blank %}no-image{% endif %}">
+  {% if card_collection.image == blank %}
+    <div class="card-collection__icon">
+      <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M15.1882 5.06666C14.9392 5.29198 14.6775 5.50291 14.4045 5.69841C13.9327 6.01508 13.4022 6.23358 12.8449 6.34441C12.6027 6.39191 12.3493 6.41249 11.8442 6.45208C10.576 6.55341 9.94107 6.60408 9.41224 6.79091C8.80756 7.0044 8.25836 7.35057 7.80492 7.804C7.35148 8.25744 7.00531 8.80665 6.79182 9.41133C6.60499 9.94016 6.55432 10.5751 6.45299 11.8433C6.43572 12.1786 6.39977 12.5127 6.34532 12.844C6.23449 13.4013 6.01599 13.9317 5.69932 14.4036C5.56157 14.6094 5.39691 14.8026 5.06757 15.1873C4.24266 16.1563 3.82941 16.6408 3.58716 17.1475C3.02824 18.3192 3.02824 19.6808 3.58716 20.8525C3.82941 21.3592 4.24266 21.8437 5.06757 22.8127C5.39691 23.1974 5.56157 23.3906 5.69932 23.5964C6.01599 24.0682 6.23449 24.5987 6.34532 25.156C6.39282 25.3982 6.41341 25.6516 6.45299 26.1567C6.55432 27.4249 6.60499 28.0598 6.79182 28.5887C7.00531 29.1933 7.35148 29.7425 7.80492 30.196C8.25836 30.6494 8.80756 30.9956 9.41224 31.2091C9.94107 31.3959 10.576 31.4466 11.8442 31.5479C12.3493 31.5875 12.6027 31.6081 12.8449 31.6556C13.4022 31.7664 13.9327 31.9865 14.4045 32.3016C14.6103 32.4393 14.8035 32.604 15.1882 32.9333C16.1572 33.7582 16.6417 34.1715 17.1484 34.4137C18.3201 34.9727 19.6817 34.9727 20.8534 34.4137C21.3601 34.1715 21.8446 33.7582 22.8136 32.9333C23.1983 32.604 23.3915 32.4393 23.5973 32.3016C24.0692 31.9849 24.5996 31.7664 25.1569 31.6556C25.3992 31.6081 25.6525 31.5875 26.1576 31.5479C27.4258 31.4466 28.0607 31.3959 28.5896 31.2091C29.1942 30.9956 29.7435 30.6494 30.1969 30.196C30.6503 29.7425 30.9965 29.1933 31.21 28.5887C31.3968 28.0598 31.4475 27.4249 31.5488 26.1567C31.5884 25.6516 31.609 25.3982 31.6565 25.156C31.7673 24.5987 31.9874 24.0682 32.3025 23.5964C32.4402 23.3906 32.6049 23.1974 32.9342 22.8127C33.7592 21.8437 34.1724 21.3592 34.4147 20.8525C34.9736 19.6808 34.9736 18.3192 34.4147 17.1475C34.1724 16.6408 33.7592 16.1563 32.9342 15.1873C32.7089 14.9383 32.498 14.6766 32.3025 14.4036C31.9861 13.9316 31.7666 13.4015 31.6565 12.844C31.6021 12.5127 31.5661 12.1786 31.5488 11.8433C31.4475 10.5751 31.3968 9.94016 31.21 9.41133C30.9965 8.80665 30.6503 8.25744 30.1969 7.804C29.7435 7.35057 29.1942 7.0044 28.5896 6.79091C28.0607 6.60408 27.4258 6.55341 26.1576 6.45208C25.8223 6.4348 25.4882 6.39886 25.1569 6.34441C24.5994 6.23435 24.0693 6.01478 23.5973 5.69841C23.3246 5.50249 23.0629 5.29159 22.8136 5.06666C21.8446 4.24174 21.3601 3.82849 20.8534 3.58624C20.275 3.30976 19.642 3.16626 19.0009 3.16626C18.3598 3.16626 17.7268 3.30976 17.1484 3.58624C16.6417 3.82849 16.1572 4.24174 15.1882 5.06666ZM25.0667 12.9358C25.3078 13.1775 25.4432 13.5049 25.4432 13.8462C25.4432 14.1876 25.3078 14.515 25.0667 14.7567L14.7576 25.0673C14.6401 25.1959 14.4978 25.2993 14.3393 25.3714C14.1807 25.4434 14.0092 25.4826 13.8351 25.4865C13.661 25.4904 13.4879 25.459 13.3263 25.3942C13.1647 25.3294 13.0179 25.2325 12.8947 25.1093C12.7716 24.9862 12.6747 24.8394 12.6099 24.6777C12.545 24.5161 12.5136 24.343 12.5176 24.1689C12.5215 23.9948 12.5607 23.8233 12.6327 23.6648C12.7048 23.5063 12.8082 23.364 12.9367 23.2465L23.2442 12.9374C23.4859 12.6963 23.8133 12.5608 24.1547 12.5608C24.496 12.5608 24.8234 12.6963 25.0651 12.9374L25.0667 12.9358ZM25.0144 23.2956C25.0144 23.7512 24.8334 24.1882 24.5112 24.5103C24.1891 24.8325 23.7521 25.0135 23.2965 25.0135C22.8409 25.0135 22.4039 24.8325 22.0817 24.5103C21.7596 24.1882 21.5786 23.7512 21.5786 23.2956C21.5786 22.84 21.7596 22.403 22.0817 22.0808C22.4039 21.7587 22.8409 21.5777 23.2965 21.5777C23.7521 21.5777 24.1891 21.7587 24.5112 22.0808C24.8334 22.403 25.0144 22.84 25.0144 23.2956ZM14.7069 16.4239C14.9325 16.4239 15.1559 16.3795 15.3643 16.2931C15.5728 16.2068 15.7621 16.0803 15.9217 15.9207C16.0812 15.7612 16.2077 15.5718 16.2941 15.3634C16.3804 15.155 16.4248 14.9316 16.4248 14.706C16.4248 14.4804 16.3804 14.257 16.2941 14.0486C16.2077 13.8401 16.0812 13.6508 15.9217 13.4912C15.7621 13.3317 15.5728 13.2052 15.3643 13.1188C15.1559 13.0325 14.9325 12.9881 14.7069 12.9881C14.2513 12.9881 13.8143 13.1691 13.4922 13.4912C13.17 13.8134 12.989 14.2504 12.989 14.706C12.989 15.1616 13.17 15.5986 13.4922 15.9207C13.8143 16.2429 14.2513 16.4239 14.7069 16.4239Z" fill="#F3F1EE"/>
+      </svg>        
     </div>
-    {%- if card_collection != blank and card_style == 'card' or card_collection.featured_image -%}
-      <div class="card__content">
-        <div class="card__information">
-          <h3 class="card__heading">
-            <a
-              {% if card_collection == blank %}
-                role="link" aria-disabled="true"
-              {% else %}
-                href="{{ card_collection.url }}"
-              {% endif %}
-              class="full-unstyled-link"
-            >
-              {%- if card_collection.title != blank -%}
-                {{- card_collection.title | escape -}}
-              {%- else -%}
-                {{ 'onboarding.collection_title' | t }}
-              {%- endif -%}
-              {%- if card_collection.featured_image or card_collection.description == blank -%}
-                <span class="icon-wrap">{% render 'icon-arrow' %}</span>
-              {%- endif %}
-            </a>
-          </h3>
-          {%- if card_collection.featured_image == null and card_collection.description != blank -%}
-            <p class="card__caption">
-              {{- card_collection.description | strip_html | truncatewords: 12 -}}
-              <span class="icon-wrap">&nbsp;{% render 'icon-arrow' %}</span>
-            </p>
-          {%- endif -%}
-        </div>
-      </div>
-    {%- endif -%}
-    {%- if card_collection == blank -%}
-      <div class="card__content">
-        <div class="card__information">
-          <h3 class="card__heading card__heading--placeholder">
-            <a role="link" aria-disabled="true" class="full-unstyled-link">
-              {{ 'onboarding.collection_title' | t }}
-              <span class="icon-wrap">{% render 'icon-arrow' %}</span>
-            </a>
-          </h3>
-        </div>
-      </div>
-    {%- endif -%}
-  </div>
+  {% endif %}
+  <h2 class="card-collection__heading">
+    {{ card_collection.title }}
+  </h2>
+  {% if card_collection.image != blank %}
+    <div class="card-collection__image gp-image" style="padding-bottom: {{ 1 | divided_by: card_collection.image.aspect_ratio | times: 100 }}%">
+      {{ card_collection.image | img_url: '240x' | img_tag }}
+    </div>
+  {% endif %}
+  <a class="card-collection__link" href="{{ card_collection.url }}">
+    {% if card_collection.title == 'Shop ALL' %}
+      Discover
+      <span class="card-collection__link-icon">{% render 'icon-right-arrow-white' %}</span>
+    {% else %}
+      Shop All
+      <span class="card-collection__link-icon">{% render 'icon-right-arrow-black' %}</span>
+    {% endif %}
+  </a>
 </div>
