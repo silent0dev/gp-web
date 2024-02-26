@@ -1,75 +1,100 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "slideshow_fzb3Ji": {
+      "type": "slideshow",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "slide_awB8bJ": {
+          "type": "slide",
           "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
+            "image": "shopify:\/\/shop_images\/hi_res-64-wisharemedia_r1_5620_1.png",
+            "heading": "Be Your Own Chef",
+            "heading_size": "h0",
+            "subheading": "Take Your Cooking to the Next Level with Our Innovative Kitchen Appliances.",
+            "button_label": "Shop Now",
+            "link": "shopify:\/\/collections",
+            "button_style_secondary": false,
+            "box_align": "middle-left",
+            "show_text_box": false,
+            "text_alignment": "left",
+            "image_overlay_opacity": 30,
+            "color_scheme": "scheme-2",
+            "text_alignment_mobile": "left"
           }
         },
-        "button": {
-          "type": "buttons",
+        "slide_QQH7pe": {
+          "type": "slide",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify:\/\/collections\/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "image": "shopify:\/\/shop_images\/web-f1-04R_5928_2.png",
+            "heading": "Be Your Own Chef",
+            "heading_size": "h0",
+            "subheading": "Take Your Cooking to the Next Level with Our Innovative Kitchen Appliances.",
+            "button_label": "Shop Now",
+            "link": "shopify:\/\/collections",
+            "button_style_secondary": false,
+            "box_align": "middle-left",
+            "show_text_box": false,
+            "text_alignment": "left",
+            "image_overlay_opacity": 30,
+            "color_scheme": "scheme-2",
+            "text_alignment_mobile": "left"
+          }
+        },
+        "slide_WxyiTh": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hi_res-21-wisharemedia_r1_5709_2.png",
+            "heading": "Be Your Own Chef",
+            "heading_size": "h0",
+            "subheading": "Take Your Cooking to the Next Level with Our Innovative Kitchen Appliances.",
+            "button_label": "Shop Now",
+            "link": "shopify:\/\/collections",
+            "button_style_secondary": false,
+            "box_align": "middle-left",
+            "show_text_box": false,
+            "text_alignment": "left",
+            "image_overlay_opacity": 30,
+            "color_scheme": "scheme-2",
+            "text_alignment_mobile": "left"
+          }
+        },
+        "slide_6Rbrcx": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hi_res-ec-wisharemedia_r1_5088_1.png",
+            "heading": "Be Your Own Chef",
+            "heading_size": "h0",
+            "subheading": "Take Your Cooking to the Next Level with Our Innovative Kitchen Appliances.",
+            "button_label": "Shop Now",
+            "link": "shopify:\/\/collections",
+            "button_style_secondary": false,
+            "box_align": "middle-left",
+            "show_text_box": false,
+            "text_alignment": "left",
+            "image_overlay_opacity": 30,
+            "color_scheme": "scheme-2",
+            "text_alignment_mobile": "left"
           }
         }
       },
       "block_order": [
-        "heading",
-        "button"
+        "slide_awB8bJ",
+        "slide_QQH7pe",
+        "slide_WxyiTh",
+        "slide_6Rbrcx"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
+        "layout": "full_bleed",
+        "slide_height": "large",
+        "slider_visual": "dots",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
         "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
-      }
-    },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 44,
-        "padding_bottom": 36
+        "show_text_below": false,
+        "accessibility_info": "Slideshow about our brand"
       }
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection"
+    "slideshow_fzb3Ji"
   ]
 }

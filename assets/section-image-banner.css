@@ -428,6 +428,24 @@
   margin-bottom: 0;
 }
 
+.banner__heading.h0 {
+  font-size: 80px;
+}
+
+.banner__box {
+  font-size: 24px;
+}
+
+@media (max-width: 768px) {
+  .banner__heading.h0 {
+    font-size: 32px;
+  }
+  
+  .banner__box {
+    font-size: 16px;
+  }
+}
+
 .banner__box .banner__heading + * {
   margin-top: 1rem;
 }
