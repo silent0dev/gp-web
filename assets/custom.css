@@ -578,3 +578,18 @@
         padding-bottom: 50% !important;
     }
 }
+
+@media (min-width: 750px) {
+    .footer .grid--4-col-tablet .grid__item {
+        width: calc(20% - 15px);
+    }
+
+    .footer .grid--4-col-tablet .grid__item:first-of-type {
+        width: calc(40% - 15px);
+    }
+}
+
+.newsletter-form__field-wrapper .field__input {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+}

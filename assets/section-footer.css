@@ -7,19 +7,13 @@
 }
 
 .footer__content-top {
-  padding-bottom: 5rem;
   display: block;
 }
 
 @media screen and (max-width: 749px) {
-  .footer .grid {
-    display: block;
-  }
-
   .footer-block.grid__item {
     padding: 0;
-    margin: 4rem 0;
-    width: 100%;
+    margin: 0 0 2.6rem;
   }
 
   .footer-block.grid__item:first-child {
@@ -27,9 +21,8 @@
   }
 
   .footer__content-top {
-    padding-bottom: 3rem;
-    padding-left: calc(4rem / var(--font-body-scale));
-    padding-right: calc(4rem / var(--font-body-scale));
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 
@@ -150,14 +143,29 @@
 }
 
 .footer-block__heading {
-  margin-bottom: 2rem;
+  margin-bottom: 0;
   margin-top: 0;
-  font-size: calc(var(--font-heading-scale) * 1.6rem);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.footer-block__newsletter .footer-block__heading {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  margin-bottom: 1.6rem;
 }
 
 @media screen and (min-width: 990px) {
   .footer-block__heading {
-    font-size: calc(var(--font-heading-scale) * 1.8rem);
+    font-size: 20px;
+    margin-bottom: 3.2rem;
+  }
+
+  .footer-block__newsletter .footer-block__heading {
+    font-size: 24px;
+    line-height: 46px;
   }
 }
 
@@ -176,8 +184,8 @@
 }
 
 .footer-block__newsletter {
-  text-align: center;
   flex-grow: 1;
+  max-width: 40rem;
 }
 
 .newsletter-form__field-wrapper {
@@ -318,10 +326,6 @@
   }
 }
 
-.footer-block__details-content {
-  margin-bottom: 4rem;
-}
-
 @media screen and (min-width: 750px) {
   .footer-block__details-content {
     margin-bottom: 0;
@@ -366,15 +370,15 @@
 
 @media screen and (max-width: 989px) {
   .footer-block__details-content .list-menu__item--link {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 3px;
+    padding-bottom: 3px;
   }
 }
 
 @media screen and (min-width: 750px) {
   .footer-block__details-content .list-menu__item--link {
     display: inline-block;
-    font-size: 1.4rem;
+    font-size: 2rem;
   }
 
   .footer-block__details-content > :first-child .list-menu__item--link {
