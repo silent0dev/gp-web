@@ -1,10 +1,20 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
+{{ 'component-collection-hero.css' | asset_url | stylesheet_tag }}
 
 <div class="page-width">
-  <h1 class="title title--primary inline-richtext{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-    {{ section.settings.title }}
-  </h1>
+  <div class="collection-hero color-scheme-1 gradient">
+    <div class="collection-hero__inner  scroll-trigger animate--fade-in">
+      <div class="collection-hero__text-wrapper">
+        <h1 class="collection-hero__title">
+          {{ section.settings.title }}
+        </h1>
+        <div class="collection-hero__description rte">
+          {{ section.settings.description }}
+        </div>
+      </div>
+    </div>
+  </div>
   {%- liquid
     case section.settings.sort
       when 'products_high', 'products_low'
@@ -29,6 +39,7 @@
       role="list"
     >
       {%- for collection in collections -%}
+        {% unless collection.title == 'New Arrival' or collection.title == 'Shop ALL' %}
         <li
           class="collection-list__item grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
           {% if settings.animations_reveal_on_scroll %}
@@ -42,6 +53,7 @@
             columns: 3
           %}
         </li>
+        {% endunless %}
       {%- endfor -%}
     </ul>
     {% render 'pagination', paginate: paginate %}
@@ -57,6 +69,12 @@
       "id": "title",
       "label": "t:sections.main-list-collections.settings.title.label",
       "default": "Collections"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Shop our complete line of innovative kitchen cookware</p>"
     },
     {
       "type": "select",
