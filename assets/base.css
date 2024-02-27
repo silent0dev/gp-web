@@ -793,11 +793,21 @@ summary::-webkit-details-marker {
 
 .title-wrapper-with-link {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-end;
   gap: 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 6rem;
   flex-wrap: wrap;
+}
+
+.title-wrapper-with-link .title {
+  width: 100%;
+}
+
+.title-wrapper-with-link .rich-text__text {
+  max-width: 50rem;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .title--primary {
@@ -820,7 +830,7 @@ summary::-webkit-details-marker {
 @media screen and (min-width: 990px) {
   .title,
   .title-wrapper-with-link {
-    margin: 5rem 0 3rem;
+    margin: 5rem 0 6rem;
   }
 
   .title--primary {

@@ -623,3 +623,13 @@
         font-weight: 600;
     }
 }
+
+.image-with-text__media, .multicolumn-card-spacing {
+    border-radius: 15px !important;
+    overflow: hidden !important;
+}
+
+.multicolumn-card-spacing {
+    margin: 0 !important;
+    padding: 0 !important;
+}

@@ -432,6 +432,10 @@
   font-size: 80px;
 }
 
+.banner__heading.h1 {
+  font-size: 60px;
+}
+
 .banner__box {
   font-size: 24px;
 }
@@ -439,6 +443,10 @@
 @media (max-width: 768px) {
   .banner__heading.h0 {
     font-size: 32px;
+  }
+
+  .banner__heading.h1 {
+    font-size: 36px;
   }
   
   .banner__box {

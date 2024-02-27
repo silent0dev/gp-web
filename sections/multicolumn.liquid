@@ -32,9 +32,14 @@
   >
     {%- unless section.settings.title == blank -%}
       <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin">
-        <h2 class="title inline-richtext {{ section.settings.heading_size }}">
+        <h2 class="title inline-richtext center {{ section.settings.heading_size }}">
           {{ section.settings.title }}
         </h2>
+        {% if section.settings.description != blank %}
+          <div class="rich-text__text rte scroll-trigger animate--slide-in">
+            {{ section.settings.description }}
+          </div>
+        {% endif %}
         {%- if section.settings.button_label != blank and show_mobile_slider -%}
           <a href="{{ section.settings.button_link }}" class="link underlined-link large-up-hide">
             {{- section.settings.button_label | escape -}}
@@ -222,6 +227,12 @@
       ],
       "default": "h1",
       "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Our values are deeply rooted in innovation, quality, and a commitment to creating an enjoyable culinary experience for every family.</p>"
     },
     {
       "type": "select",

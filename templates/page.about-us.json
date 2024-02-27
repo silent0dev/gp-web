@@ -1,14 +1,280 @@
 {
   "sections": {
-    "main": {
-      "type": "main-page",
+    "image_banner_tWHTPh": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_GiGHP9": {
+          "type": "heading",
+          "settings": {
+            "heading": "Be Your Own Chef",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_GiGHP9"
+      ],
       "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
+        "image": "shopify:\/\/shop_images\/image_24.png",
+        "image_overlay_opacity": 30,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "image_with_text_rbxibn": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_AYHAFg": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our Story",
+            "heading_size": "h1"
+          }
+        },
+        "text_nrpRcB": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our story begins with a shared love for the warmth of home-cooked meals, prepared with care and creativity. As home cooks and food enthusiasts ourselves, we understand the importance of reliable cookware that not only enhances convenience and functionality but also adds a touch of style to your kitchen.<\/p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_AYHAFg",
+        "text_nrpRcB"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/hi_res-64-wisharemedia_r1_5620_1.png",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "scheme-1",
+        "color_scheme": "scheme-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 88,
+        "padding_bottom": 88
+      }
+    },
+    "rich_text_qgxgtX": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_eFXAjB": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our Mission",
+            "heading_size": "h1"
+          }
+        },
+        "text_4Y4eQx": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our mission is to revolutionize your kitchen experience by providing innovative, high-quality cookware that caters to the needs of all home cooks and foodies. We strive to make cooking at home not only easy but also fun and enjoyable, offering you the tools you need to create culinary masterpieces effortlessly.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_eFXAjB",
+        "text_4Y4eQx"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-5",
+        "full_width": true,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "multicolumn_nGC6kk": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_pQBYat": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_18_1.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_pQBYat"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "description": "<p>Our values are deeply rooted in innovation, quality, and a commitment to creating an enjoyable culinary experience for every family.<\/p>",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-5",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "multicolumn_fMNHcM": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_LE4mbx": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/web-1d-wisharemedia_r1_04R_5436_1.png",
+            "title": "Innovation",
+            "text": "<p>We embrace the spirit of innovation to continuously improve and redefine the way we cook at home.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_e9GwUc": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_67.png",
+            "title": "Quality",
+            "text": "<p>We're ommited to delivering cookware of the highest quality, ensuring durability, reliability, and superior performance in every product.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_dt9aBX": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_3.png",
+            "title": "Enjoyable Culinary Experience",
+            "text": "<p>We prioritize intuitive and user-friendly design to make cooking accessible and enjoyable for all skill levels.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_LE4mbx",
+        "column_e9GwUc",
+        "column_dt9aBX"
+      ],
+      "settings": {
+        "title": "Our Values",
+        "heading_size": "h1",
+        "description": "<p>Our values are deeply rooted in innovation, quality, and a commitment to creating an enjoyable culinary experience for every family.<\/p>",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-5",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "icon_with_text_rVTV3Q": {
+      "type": "icon-with-text",
+      "blocks": {
+        "item_APNXag": {
+          "type": "item",
+          "settings": {
+            "icon": "<svg width=\"34\" height=\"38\" viewbox=\"0 0 34 38\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<path d=\"M3.55337 8.66395C3.3814 8.71888 3.22494 8.82479 3.09962 8.97112C2.94693 9.18572 2.86208 9.4537 2.859 9.73112C2.21275 16.8799 2.199 21.1707 2.859 28.2672C2.85932 28.5196 2.92577 28.766 3.04966 28.9742C3.17354 29.1824 3.3491 29.3427 3.55337 29.4341L16.6076 35.2861L16.9995 35.4112L17.3927 35.2845L30.447 29.4357C30.6498 29.3417 30.8239 29.1808 30.9474 28.9732C31.071 28.7655 31.1385 28.5205 31.1414 28.2688C31.8289 21.0852 31.8371 16.9432 31.1414 9.82612C31.1601 9.51506 31.0739 9.20768 30.9007 8.96795C30.7867 8.78483 30.6291 8.64353 30.447 8.56104V8.5642\" stroke=\"black\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<path d=\"M31.12 9.49528C31.0853 9.30048 31.0098 9.1184 30.9 8.96487C30.7857 8.78205 30.6282 8.64083 30.4463 8.55795L17.392 2.81203C17.2684 2.74907 17.1347 2.71655 16.9995 2.71655C16.8643 2.71655 16.7306 2.74907 16.6069 2.81203L10.0798 5.73645L3.55266 8.66086C3.38097 8.71489 3.22454 8.81969 3.09891 8.96487C2.98895 9.11885 2.91342 9.30151 2.87891 9.49686C2.91457 9.70534 2.99487 9.90026 3.11252 10.0639C3.23018 10.2276 3.38147 10.3549 3.55266 10.4342L16.6069 16.2862H17.3907L24.5627 13.072L30.4477 10.4342C30.6204 10.3567 30.7731 10.2298 30.8914 10.0656C31.0098 9.9013 31.0899 9.70504 31.1242 9.49528H31.1214H31.12Z\" fill=\"black\" fill-opacity=\"0.12\"><\/path>\n<path d=\"M24.5627 13.0704L17.392 16.2846H16.6069L3.55266 10.4342C3.38147 10.3549 3.23018 10.2276 3.11252 10.0639C2.99487 9.90026 2.91457 9.70534 2.87891 9.49687C2.91342 9.30151 2.98895 9.11885 3.09891 8.96487C3.22454 8.81969 3.38097 8.71489 3.55266 8.66086L10.0798 5.73645M24.5627 13.0704L30.4477 10.4342C30.6204 10.3567 30.7731 10.2298 30.8914 10.0656C31.0098 9.9013 31.0899 9.70504 31.1242 9.49528H31.1214C31.0867 9.30048 31.0112 9.1184 30.9014 8.96487C30.7871 8.78205 30.6296 8.64083 30.4477 8.55795L17.3934 2.81203C17.2698 2.74907 17.136 2.71655 17.0008 2.71655C16.8656 2.71655 16.7319 2.74907 16.6083 2.81203L10.0798 5.73645M24.5627 13.0704L10.0798 5.73645M17.0002 35.4113V16.2846M21.8127 26.9167L27.3127 24.5417\" stroke=\"black\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<\/svg>",
+            "heading": "Free shipping",
+            "text": "Free domestic shipping within the contiguous US"
+          }
+        },
+        "item_ttNLkM": {
+          "type": "item",
+          "settings": {
+            "icon": "<svg width=\"38\" height=\"38\" viewbox=\"0 0 38 38\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<path d=\"M2.71289 22.3931C2.71289 16.188 6.85014 14.6379 8.91956 14.6379C12.6404 14.6379 13.5714 17.7413 13.5714 19.2898V25.4964C13.5714 29.2173 10.4681 30.1483 8.91797 30.1483C6.85014 30.1483 2.71289 28.5966 2.71289 22.3931ZM35.2852 22.3931C35.2852 16.188 31.148 14.6379 29.0786 14.6379C25.3577 14.6379 24.4283 17.7413 24.4283 19.2898V25.4964C24.4283 29.2173 27.5316 30.1483 29.0801 30.1483C31.148 30.1483 35.2852 28.5966 35.2852 22.3931Z\" fill=\"black\" fill-opacity=\"0.12\"><\/path>\n<path d=\"M2.71289 22.3931C2.71289 16.188 6.85014 14.6379 8.91956 14.6379C12.6404 14.6379 13.5714 17.7413 13.5714 19.2898V25.4964C13.5714 29.2173 10.4681 30.1483 8.91797 30.1483C6.85014 30.1483 2.71289 28.5966 2.71289 22.3931ZM35.2852 22.3931C35.2852 16.188 31.148 14.6379 29.0786 14.6379C25.3577 14.6379 24.4283 17.7413 24.4283 19.2898V25.4964C24.4283 29.2173 27.5316 30.1483 29.0801 30.1483C31.148 30.1483 35.2852 28.5966 35.2852 22.3931Z\" stroke=\"black\" stroke-width=\"2\"><\/path>\n<path d=\"M3.76758 17.833C3.99558 10.3502 7.80349 2.03613 18.9992 2.03613C30.1776 2.03613 33.9902 10.3201 34.2262 17.7919M34.394 26.763C34.394 26.763 34.6062 31.6381 32.1029 33.7614C29.6012 35.8767 23.2837 35.8355 23.2837 35.8355\" stroke=\"black\" stroke-width=\"2\" stroke-linecap=\"round\"><\/path>\n<\/svg>",
+            "heading": "Customer service",
+            "text": "Our customer support is available Monday to Friday."
+          }
+        },
+        "item_tJCGfk": {
+          "type": "item",
+          "settings": {
+            "icon": "<svg width=\"38\" height=\"38\" viewbox=\"0 0 38 38\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.7423 34.7937C24.6444 36.3359 21.7136 36.2187 19.7899 34.4628C14.3479 29.4939 9.17264 24.2404 4.28588 18.7245C3.6823 18.0543 3.27045 17.2339 3.09363 16.3495C2.4698 13.1306 1.15088 5.10148 3.12847 3.12232C5.10763 1.14315 13.1351 2.46365 16.3525 3.08748C17.2391 3.26323 18.0593 3.6749 18.7306 4.27815C24.2466 9.1649 29.5 14.3401 34.469 19.7822C36.2249 21.7043 36.3373 24.6382 34.7999 26.7362C33.69 28.2482 32.5167 29.7667 31.1424 31.1378C29.7728 32.5074 28.256 33.6822 26.7439 34.7922L26.7423 34.7937ZM14.975 10.3281C15.2939 10.6294 15.5492 10.9917 15.7258 11.3934C15.9023 11.7952 15.9965 12.2283 16.0027 12.667C16.009 13.1058 15.9272 13.5414 15.7622 13.948C15.5972 14.3546 15.3523 14.724 15.0421 15.0344C14.7319 15.3447 14.3625 15.5897 13.956 15.7548C13.5494 15.92 13.1139 16.0019 12.6751 15.9958C12.2363 15.9897 11.8032 15.8956 11.4014 15.7192C10.9996 15.5429 10.6373 15.2877 10.3358 14.9688C9.74875 14.3479 9.42698 13.5226 9.43888 12.6681C9.45077 11.8137 9.7954 10.9977 10.3995 10.3933C11.0036 9.78902 11.8196 9.44412 12.674 9.43193C13.5284 9.41974 14.3539 9.74123 14.975 10.3281Z\" fill=\"black\" fill-opacity=\"0.12\" stroke=\"black\" stroke-width=\"2\"><\/path>\n<\/svg>",
+            "heading": "Refer a friend",
+            "text": "Share the products you love to your friends"
+          }
+        },
+        "item_EMpPKx": {
+          "type": "item",
+          "settings": {
+            "icon": "<svg width=\"38\" height=\"38\" viewbox=\"0 0 38 38\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<path d=\"M5.12295 28.7882C5.3495 30.6835 6.24385 32.4361 7.64561 33.7316C9.04736 35.0272 10.8648 35.781 12.772 35.8578C16.9218 36.0004 21.0752 35.9999 25.2249 35.8562C27.132 35.7798 28.9495 35.0263 30.3512 33.731C31.753 32.4357 32.6474 30.6833 32.874 28.7882C33.0394 27.4163 33.1266 26.036 33.1353 24.6542C33.1353 23.2592 33.0292 21.8802 32.874 20.5217C32.6478 18.6265 31.7538 16.874 30.3523 15.5784C28.9508 14.2828 27.1336 13.529 25.2265 13.4521C23.1508 13.3792 21.075 13.3412 18.9993 13.3428C16.923 13.3421 14.847 13.3785 12.772 13.4521C10.8648 13.529 9.04731 14.2831 7.64578 15.579C6.24426 16.8749 5.35038 18.6278 5.12453 20.5232C4.95973 21.8942 4.87251 23.2734 4.86328 24.6542C4.86328 26.0522 4.96936 27.4329 5.12295 28.7882Z\" fill=\"black\" fill-opacity=\"0.12\" stroke=\"black\" stroke-width=\"2\"><\/path>\n<path d=\"M26.9154 13.3475V9.95127C26.9153 8.91164 26.7104 7.88221 26.3124 6.92176C25.9145 5.9613 25.3313 5.08864 24.5961 4.35358C23.1113 2.86906 21.0975 2.03519 18.9979 2.0354C16.8983 2.03561 14.8847 2.86989 13.4002 4.3547C11.9157 5.83951 11.0818 7.85323 11.082 9.95286V13.3475\" stroke=\"black\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<path d=\"M18.9986 28.0472C19.8985 28.0472 20.7615 27.6897 21.3978 27.0533C22.0341 26.417 22.3916 25.554 22.3916 24.6541C22.3916 23.7542 22.0341 22.8911 21.3978 22.2548C20.7615 21.6185 19.8985 21.261 18.9986 21.261C18.0986 21.261 17.2356 21.6185 16.5993 22.2548C15.963 22.8911 15.6055 23.7542 15.6055 24.6541C15.6055 25.554 15.963 26.417 16.5993 27.0533C17.2356 27.6897 18.0986 28.0472 18.9986 28.0472Z\" stroke=\"black\" stroke-width=\"2\"><\/path>\n<\/svg>",
+            "heading": "Secure payment",
+            "text": "All payments are processed securely"
+          }
+        }
+      },
+      "block_order": [
+        "item_APNXag",
+        "item_ttNLkM",
+        "item_tJCGfk",
+        "item_EMpPKx"
+      ],
+      "settings": {
+        "text_color": "#000000",
+        "back_color": "#f3f1ee",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_top_mob": 50,
+        "padding_bottom_mob": 50
+      }
+    },
+    "featured_collection_QRhEBf": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "You may also like",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "new-arrival",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 100,
+        "padding_bottom": 100
       }
     }
   },
   "order": [
-    "main"
+    "image_banner_tWHTPh",
+    "image_with_text_rbxibn",
+    "rich_text_qgxgtX",
+    "multicolumn_nGC6kk",
+    "multicolumn_fMNHcM",
+    "icon_with_text_rVTV3Q",
+    "featured_collection_QRhEBf"
   ]
 }
