@@ -341,12 +341,25 @@
         "header": "What Customers Think",
         "btn_text": "Read More Reviews",
         "btn_link": "#",
-        "text_color": "#FFFFFF",
-        "back_color": "#1A1A1A",
+        "text_color": "#ffffff",
+        "back_color": "#1a1a1a",
         "padding_top": 50,
         "padding_bottom": 100,
         "padding_top_mob": 50,
         "padding_bottom_mob": 50
+      }
+    },
+    "about_us_GKBcXF": {
+      "type": "about-us",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Frame_5.png",
+        "header": "About us",
+        "text": "<p>At Golden Prarie, we aim to transforms kitchens into havens of culinary delight. We take pride in crafting high-quality, user-friendly appliances designed to elevate your cooking experience. Our unwavering commitment to culinary satisfcation is rooted in a philosophy of making home-cooked meals easy and enjoyable for the whole family. Join us as we redefine the art of home cooking with our long list of innovative kitchen electronics.<\/p>",
+        "logo": "Golden Prairie",
+        "padding_top": 90,
+        "padding_bottom": 50,
+        "padding_top_mob": 30,
+        "padding_bottom_mob": 30
       }
     }
   },
@@ -358,6 +371,7 @@
     "image_banner_Kn6cmn",
     "featured_collection_xBXGfH",
     "icon_with_text_iWwY7j",
-    "review_bqTR9X"
+    "review_bqTR9X",
+    "about_us_GKBcXF"
   ]
 }

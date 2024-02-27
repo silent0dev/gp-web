@@ -505,3 +505,76 @@
     transition: 0.3s;
     border-color: #000;
 }
+
+.about-us {
+    background-color: #1A1A1A;
+    border-radius: 15px;
+    display: flex;
+    overflow: hidden;
+}
+
+.about-us-text {
+    width: 70%;
+    padding: 70px 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-us-image {
+    width: 30%;
+}
+
+.about-us-header {
+    font-size: 50px;
+    line-height: 65px;
+    margin: 0;
+    margin-bottom: 33px;
+    color: #fff;
+}
+
+.about-us-description {
+    font-size: 20px;
+    line-height: 30px;
+    color: #fff;
+}
+
+.about-us-logo {
+    margin: auto 0 0;
+    color: #B9011D;
+    font-size: 30px;
+}
+
+@media (max-width: 768px) {
+    .about-us {
+        flex-direction: column-reverse;
+    }
+
+    .about-us-text, .about-us-image {
+        width: 100%;
+    }
+
+    .about-us-text {
+        padding: 24px;
+    }
+
+    .about-us-header {
+        font-size: 16px;
+        line-height: 1;
+        margin-bottom: 0;
+    }
+
+    .about-us-description {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .about-us-logo {
+        font-size: 11px;
+        line-height: 1;
+        margin-top: 0;
+    }
+
+    .about-us-image .gp-image {
+        padding-bottom: 50% !important;
+    }
+}

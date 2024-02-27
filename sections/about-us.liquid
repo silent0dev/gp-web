@@ -1,0 +1,112 @@
+{% style %}
+.section-{{ section.id }}--padding {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+}
+
+@media(max-width: 768px) {
+    .section-{{ section.id }}--padding {
+        padding-top: {{ section.settings.padding_top_mob }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mob }}px;
+    }
+}
+{% endstyle %}
+<div class="section-{{ section.id }}--padding">
+    <div class="page-width">
+        <div class="about-us">
+            <div class="about-us-text">
+                <h2 class="about-us-header">
+                    {{ section.settings.header }}
+                </h2>
+                <div class="about-us-description">
+                    {{ section.settings.text }}
+                </div>
+                <h4 class="about-us-logo">
+                    {{ section.settings.logo }}
+                </h4>
+            </div>
+            <div class="about-us-image">
+                <div class="gp-image" style="padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%">
+                    {{ section.settings.image | img_url: '350x' | img_tag }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% schema %}
+{
+    "name": "About US",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        },
+        {
+            "type": "text",
+            "id": "header",
+            "label": "Header",
+            "default": "About us"
+        },
+        {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text"
+        },
+        {
+            "type": "text",
+            "id": "logo",
+            "label": "Logo"
+        },
+        {
+            "type": "header",
+            "content": "t:sections.all.padding.section_padding_heading"
+          },
+          {
+            "type": "range",
+            "id": "padding_top",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_top",
+            "default": 50
+          },
+          {
+            "type": "range",
+            "id": "padding_bottom",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_bottom",
+            "default": 50
+          },
+          {
+            "type": "range",
+            "id": "padding_top_mob",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Mobile Padding Top",
+            "default": 50
+          },
+          {
+            "type": "range",
+            "id": "padding_bottom_mob",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Mobile Padding Bottom",
+            "default": 50
+          }
+    ],
+    "presets": [
+        {
+            "name": "About US"
+        }
+    ]
+}
+{% endschema %}
