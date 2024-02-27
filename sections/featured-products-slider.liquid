@@ -1,0 +1,145 @@
+{% style %}
+.section-{{ section.id }}--padding {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+}
+
+@media(max-width: 768px) {
+    .section-{{ section.id }}--padding {
+        padding-top: {{ section.settings.padding_top_mob }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mob }}px;
+    }
+}
+{% endstyle %}
+<div class="section-{{ section.id }}--padding">
+    <div class="page-width">
+        <div class="featured-products-slider">
+            <div class="swiper" id="gp-swiper-{{ section.id }}" data-desktop-settings='{"slidesPerView": 1, "spaceBetween": 0}' data-mobile-settings='{"slidesPerView": 1, "spaceBetween": 0}'>
+                <div class="swiper-wrapper featured-product-list">
+                    {% for block in section.blocks %}
+                        <div class="swiper-slide featured-product-item">
+                            <div class="featured-product__text">
+                                <h4 class="featured-product__subtitle">
+                                    {{ block.settings.subtitle }}
+                                </h4>
+                                {% if block.settings.title != blank %}
+                                    <h2 class="featured-product__title">
+                                        {{ block.settings.title }}
+                                    </h2>
+                                {% endif %}
+                                {% if block.settings.description != blank %}
+                                    <div class="featured-product__description">
+                                        {{ block.settings.description }}
+                                    </div>
+                                {% endif %}
+                                <div class="featured-product__button">
+                                    <a class="button button--primary" href="{{ block.settings.product.url }}">Shop Now</a>
+                                </div>
+                            </div>
+                            <div class="featured-product__image">
+                                <div class="gp-image" style="padding-bottom: {{ 1 | divided_by: block.settings.image.aspect_ratio | times: 100 }}%">
+                                    {{ block.settings.image | img_url: '750x' | img_tag }}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="swiper-button-prev swiper-button">
+                    {% render 'icon-prev' %}
+                </div>
+                <div class="swiper-button-next swiper-button">
+                    {% render 'icon-next' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% schema %}
+{
+    "name": "Featured Products Slider",
+    "settings": [
+        {
+            "type": "header",
+            "content": "t:sections.all.padding.section_padding_heading"
+          },
+          {
+            "type": "range",
+            "id": "padding_top",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_top",
+            "default": 50
+          },
+          {
+            "type": "range",
+            "id": "padding_bottom",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_bottom",
+            "default": 50
+          },
+          {
+            "type": "range",
+            "id": "padding_top_mob",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Mobile Padding Top",
+            "default": 50
+          },
+          {
+            "type": "range",
+            "id": "padding_bottom_mob",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Mobile Padding Bottom",
+            "default": 50
+          }
+    ],
+    "blocks": [
+        {
+            "type": "product",
+            "name": "Product",
+            "settings": [
+                {
+                    "type": "product",
+                    "id": "product",
+                    "label": "Product"
+                },
+                {
+                    "type": "text",
+                    "id": "subtitle",
+                    "label": "SubTitle"
+                },
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Title"
+                },
+                {
+                    "type": "richtext",
+                    "id": "description",
+                    "label": "Description"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Featured Products Slider"
+        }
+    ]
+}
+{% endschema %}
