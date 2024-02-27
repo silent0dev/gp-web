@@ -418,9 +418,6 @@
                               max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
                             {% endif %}
                           >
-                          <label class="field__label" for="Filter-{{ filter.label | escape }}-GTE">
-                            {{- 'products.facets.from' | t -}}
-                          </label>
                         </div>
                         {%- if filter_type != 'vertical' -%}
                           <span class="field-currency">{{ cart.currency.symbol }}</span>
@@ -447,9 +444,6 @@
                               max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
                             {% endif %}
                           >
-                          <label class="field__label" for="Filter-{{ filter.label | escape }}-LTE">
-                            {{- 'products.facets.to' | t -}}
-                          </label>
                         </div>
                       </price-range>
                     </div>
@@ -515,6 +509,23 @@
         {% endif %}
 
         {%- if filter_type == 'horizontal' -%}
+          <div class="product-count light" role="status">
+            <h2 class="product-count__text text-body">
+              <span id="ProductCountDesktop">
+                {%- if results.results_count -%}
+                  {{ 'templates.search.results_with_count' | t: terms: results.terms, count: results.results_count }}
+                {%- elsif results.products_count == results.all_products_count -%}
+                  {{ 'products.facets.product_count_simple' | t: count: results.products_count }}
+                {%- else -%}
+                  {{
+                    'products.facets.product_count'
+                    | t: product_count: results.products_count, count: results.all_products_count
+                  }}
+                {%- endif -%}
+              </span>
+            </h2>
+            {%- render 'loading-spinner' -%}
+          </div>
           {% comment %} Sorting and product count are the last elements when filter type is horizontal {% endcomment %}
           {%- if enable_sorting -%}
             <div class="facet-filters sorting caption">
@@ -541,7 +552,10 @@
                       </option>
                     {%- endfor -%}
                   </select>
-                  {% render 'icon-caret' %}
+                  <svg class="icon icon-caret" width="7" height="11" viewBox="0 0 7 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3.92188 0L6.51995 4.5H1.3238L3.92188 0Z" fill="#1A1A1A"/>
+                    <path d="M3.92188 11L1.3238 6.5L6.51995 6.5L3.92188 11Z" fill="#1A1A1A"/>
+                  </svg>                    
                 </div>
               </div>
 
@@ -552,23 +566,6 @@
               </noscript>
             </div>
           {%- endif -%}
-          <div class="product-count light" role="status">
-            <h2 class="product-count__text text-body">
-              <span id="ProductCountDesktop">
-                {%- if results.results_count -%}
-                  {{ 'templates.search.results_with_count' | t: terms: results.terms, count: results.results_count }}
-                {%- elsif results.products_count == results.all_products_count -%}
-                  {{ 'products.facets.product_count_simple' | t: count: results.products_count }}
-                {%- else -%}
-                  {{
-                    'products.facets.product_count'
-                    | t: product_count: results.products_count, count: results.all_products_count
-                  }}
-                {%- endif -%}
-              </span>
-            </h2>
-            {%- render 'loading-spinner' -%}
-          </div>
         {%- endif -%}
       </form>
     </facet-filters-form>
@@ -600,7 +597,10 @@
                     </option>
                   {%- endfor -%}
                 </select>
-                {% render 'icon-caret' %}
+                <svg class="icon icon-caret" width="7" height="11" viewBox="0 0 7 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.92188 0L6.51995 4.5H1.3238L3.92188 0Z" fill="#1A1A1A"/>
+                  <path d="M3.92188 11L1.3238 6.5L6.51995 6.5L3.92188 11Z" fill="#1A1A1A"/>
+                </svg>
               </div>
             </div>
 
@@ -722,7 +722,7 @@
                             aria-expanded="true"
                             type="button"
                           >
-                            {% render 'icon-arrow' %}
+                            {% render 'icon-right-arrow-black' %}
                             <span>{{ filter.label | escape }}</span>
                             {%- if filter.operator == 'AND' -%}
                               <span class="facets__and-helptext">
@@ -868,7 +868,7 @@
                             aria-expanded="true"
                             type="button"
                           >
-                            {% render 'icon-arrow' %}
+                            {% render 'icon-right-arrow-black' %}
                             {{ filter.label | escape }}
                           </button>
 
@@ -901,9 +901,6 @@
                                   max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
                                 {% endif %}
                               >
-                              <label class="field__label" for="Mobile-Filter-{{ filter.label | escape }}-GTE">
-                                {{- 'products.facets.from' | t -}}
-                              </label>
                             </div>
 
                             <span class="field-currency">{{ cart.currency.symbol }}</span>
@@ -930,9 +927,6 @@
                                   max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
                                 {% endif %}
                               >
-                              <label class="field__label" for="Mobile-Filter-{{ filter.label | escape }}-LTE">
-                                {{- 'products.facets.to' | t -}}
-                              </label>
                             </div>
                           </price-range>
                           <div class="no-js-hidden mobile-facets__footer">
@@ -987,7 +981,10 @@
                             </option>
                           {%- endfor -%}
                         </select>
-                        {% render 'icon-caret' %}
+                        <svg class="icon icon-caret" width="7" height="11" viewBox="0 0 7 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M3.92188 0L6.51995 4.5H1.3238L3.92188 0Z" fill="#1A1A1A"/>
+                          <path d="M3.92188 11L1.3238 6.5L6.51995 6.5L3.92188 11Z" fill="#1A1A1A"/>
+                        </svg>  
                       </div>
                     </div>
                   </div>
@@ -1099,7 +1096,10 @@
                   </option>
                 {%- endfor -%}
               </select>
-              {% render 'icon-caret' %}
+              <svg class="icon icon-caret" width="7" height="11" viewBox="0 0 7 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.92188 0L6.51995 4.5H1.3238L3.92188 0Z" fill="#1A1A1A"/>
+                <path d="M3.92188 11L1.3238 6.5L6.51995 6.5L3.92188 11Z" fill="#1A1A1A"/>
+              </svg>  
             </div>
           </div>
 

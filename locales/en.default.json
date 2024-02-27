@@ -200,8 +200,8 @@
         "other": "{{ product_count }} of {{ count }} products"
       },
       "product_count_simple": {
-        "one": "{{ count }} product",
-        "other": "{{ count }} products"
+        "one": "product {{ count }}",
+        "other": "products: {{ count }}"
       },
       "reset": "Reset",
       "sort_button": "Sort",

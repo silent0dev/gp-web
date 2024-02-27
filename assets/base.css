@@ -1657,16 +1657,24 @@ details[open] > .share-button__fallback {
 .customer .field input {
   flex-grow: 1;
   text-align: left;
-  padding: 2.8rem 1.8rem;
+  padding: 0 1rem;
   margin: var(--inputs-border-width);
   transition: box-shadow var(--duration-short) ease;
+}
+
+.newsletter-form__field-wrapper .field__input {
+  padding: 2.8rem 1.8rem;
 }
 
 @media (max-width: 768px) {
   .field__input,
   .customer .field input {
-    padding: 0 1.8rem;
+    padding: 0 1rem;
     font-size: 12px;
+  }
+
+  .newsletter-form__field-wrapper .field__input {
+    padding: 0 1.8rem;
   }
 }
 
@@ -2737,10 +2745,6 @@ details[open] > .header__submenu {
 
 .header__menu-item span {
   transition: 0.3s;
-}
-
-.header__menu-item:hover span {
-  font-weight: 600;
 }
 
 details[open] > .header__menu-item {

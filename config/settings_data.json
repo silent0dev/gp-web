@@ -36,7 +36,7 @@
     "card_style": "card",
     "card_image_padding": 0,
     "card_text_alignment": "center",
-    "card_color_scheme": "scheme-3",
+    "card_color_scheme": "scheme-1",
     "card_border_thickness": 0,
     "card_border_opacity": 0,
     "card_corner_radius": 0,
@@ -138,7 +138,7 @@
     "color_schemes": {
       "scheme-1": {
         "settings": {
-          "background": "#ffffff",
+          "background": "#f3f1ee",
           "background_gradient": "",
           "text": "#000000",
           "button": "#b9011d",

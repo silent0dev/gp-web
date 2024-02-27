@@ -302,6 +302,7 @@
     line-height: 30px;
     margin-top: 3px;
     margin-bottom: 0;
+    letter-spacing: 0px;
 }
 
 .card-information .pirce {
@@ -592,4 +593,33 @@
 .newsletter-form__field-wrapper .field__input {
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 8px;
+}
+
+.template--collection .card__heading {
+    font-weight: 400;
+}
+
+.template--collection .price-item {
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .template--collection .card__subheading {
+        font-size: 8px;
+        line-height: 12px;
+    }
+
+    .template--collection .card__heading {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .template--collection .price-item {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .template--collection .card__button .button {
+        font-weight: 600;
+    }
 }

@@ -10,6 +10,16 @@
   text-align: var(--text-alignment);
 }
 
+@media (min-width: 750px) {
+  .template--collection .card {
+    text-align: left;
+  }
+  
+  .template--collection .card-information .price {
+    text-align: left;
+  }
+}
+
 .card:not(.ratio) {
   display: flex;
   flex-direction: column;
@@ -94,6 +104,11 @@
 .card--card .card__inner .card__media {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+}
+
+.collection .card__media {
+  border-radius: 15px;
+  overflow: hidden;
 }
 
 .card--standard.card--text {
