@@ -118,6 +118,9 @@
 
 .facet-filters__sort + .icon-caret {
   right: 0;
+  width: 6px;
+  height: auto;
+  top: 4px;
 }
 
 @media screen and (forced-colors: active) {
@@ -975,6 +978,10 @@ input.mobile-facets__checkbox {
 
 .mobile-facets__sort .select .icon-caret {
   right: 1rem;
+  width: 6px;
+  height: auto;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .mobile-facets__sort .select__select {
