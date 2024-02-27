@@ -99,10 +99,174 @@
         "icon": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<path d=\"M7 9C7 10.0609 7.42143 11.0783 8.17157 11.8284C8.92172 12.5786 9.93913 13 11 13C12.0609 13 13.0783 12.5786 13.8284 11.8284C14.5786 11.0783 15 10.0609 15 9C15 7.93913 14.5786 6.92172 13.8284 6.17157C13.0783 5.42143 12.0609 5 11 5C9.93913 5 8.92172 5.42143 8.17157 6.17157C7.42143 6.92172 7 7.93913 7 9Z\" stroke=\"black\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<path d=\"M5.75 15C6.59393 15.733 7.58187 16.2814 8.65035 16.61C9.71882 16.9385 10.8442 17.0399 11.9542 16.9076C13.0642 16.7754 14.1342 16.4124 15.0956 15.842C16.057 15.2716 16.8884 14.5065 17.5365 13.5957C18.1845 12.6849 18.6349 11.6486 18.8587 10.5533C19.0825 9.45813 19.0747 8.32822 18.8358 7.2362C18.5969 6.14418 18.1323 5.1142 17.4717 4.21243C16.8111 3.31066 15.9692 2.55705 15 2M11 17V21M7 21H15\" stroke=\"black\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<\/svg>",
         "text": "Free Shipping on all Orders 30-Day Guarantee"
       }
+    },
+    "collection_list_rPMK7E": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_3tN3Jq": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "grills-griddles"
+          }
+        },
+        "featured_collection_JtCQn7": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "waffles-crepe-makers"
+          }
+        },
+        "featured_collection_XqjV7i": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "multi-cookers"
+          }
+        },
+        "featured_collection_E8NrDQ": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "shop-all"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_3tN3Jq",
+        "featured_collection_JtCQn7",
+        "featured_collection_XqjV7i",
+        "featured_collection_E8NrDQ"
+      ],
+      "settings": {
+        "title": "Product Categories",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 92,
+        "padding_bottom": 92
+      }
+    },
+    "featured_products_slider_xqEjj6": {
+      "type": "featured-products-slider",
+      "blocks": {
+        "product_zMnktq": {
+          "type": "product",
+          "settings": {
+            "product": "electric-smokeless-grill",
+            "subtitle": "FEATURED PRODUCT 01",
+            "title": "Electric Indoor Grill",
+            "description": "<p>Bring the rich flavors and fun of outdoor grilling, indoors. Enjoy all the benefits of traditional grilling, with the convenience of your home.<\/p>",
+            "image": "shopify:\/\/shop_images\/photo.png"
+          }
+        },
+        "product_LC7htK": {
+          "type": "product",
+          "settings": {
+            "product": "electric-griddles",
+            "subtitle": "FEATURED PRODUCT 02",
+            "title": "Electric Griddle",
+            "description": "<p>A large, 10\" by 20\" griddle that is versatile enough to cook fluffy pancakes, and powerful enough to sear steak.<\/p>",
+            "image": "shopify:\/\/shop_images\/photo_1.png"
+          }
+        },
+        "product_rVqxNK": {
+          "type": "product",
+          "settings": {
+            "product": "deep-dish-waffle-maker",
+            "subtitle": "FEATURED PRODUCT 03",
+            "title": "Deep Dish Waffle Maker",
+            "description": "<p>Make 4 waffles in just a few short minutes. Making breakfast has never been easier, thanks to this dual-heating deep dish belgian waffler maker!<\/p>",
+            "image": "shopify:\/\/shop_images\/photo_2.png"
+          }
+        },
+        "product_pazMiN": {
+          "type": "product",
+          "settings": {
+            "product": "easy-pot-electric-multi-cooker",
+            "subtitle": "FEATURED PRODUCT 04",
+            "title": "Easy Pot Electric Multi-Cooker",
+            "description": "<p>Family-sized, 7-QT easy pot, capable of cooking large meals for the whole family. Whether you're looking to roast veggies, or cook a delicious stew,this multi-cooker can do the job!<\/p>",
+            "image": "shopify:\/\/shop_images\/photo_3.png"
+          }
+        }
+      },
+      "block_order": [
+        "product_zMnktq",
+        "product_LC7htK",
+        "product_rVqxNK",
+        "product_pazMiN"
+      ],
+      "settings": {
+        "padding_top": 90,
+        "padding_bottom": 90,
+        "padding_top_mob": 30,
+        "padding_bottom_mob": 30
+      }
+    },
+    "image_banner_Kn6cmn": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_dkfVTn": {
+          "type": "heading",
+          "settings": {
+            "heading": "Transform kitchens into heavens of culinary delight",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_dkfVTn"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/125A_1.png",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "featured_collection_xBXGfH": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "New Arrival",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "new-arrival",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "scheme-3",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "slideshow_fzb3Ji",
-    "free_shipping_ED6rbQ"
+    "free_shipping_ED6rbQ",
+    "collection_list_rPMK7E",
+    "featured_products_slider_xqEjj6",
+    "image_banner_Kn6cmn",
+    "featured_collection_xBXGfH"
   ]
 }

@@ -161,8 +161,8 @@
     color: #F3F1EE;
 }
 
-.collection-list-wrapper .slider-buttons {
-    display: none;
+.slider-buttons {
+    display: none !important;
 }
 
 .collection-list-wrapper .title-wrapper-with-link {
@@ -286,5 +286,57 @@
     .featured-product__button {
         margin-top: 25px;
         text-align: center;
+    }
+}
+
+.card__subheading {
+    font-size: 16px;
+    line-height: 24px;
+    opacity: 0.7;
+    color: #000000;
+    margin: 0;
+}
+
+.card__heading {
+    font-size: 20px;
+    line-height: 30px;
+    margin-top: 3px;
+    margin-bottom: 0;
+}
+
+.card-information .pirce {
+    margin-top: 3px;
+    color: #000000;
+}
+
+.card-information .pirce-item {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.card__button {
+    margin-top: 25px;
+}
+
+.card__button .button {
+    font-size: 14px;
+    line-height: 21px;
+    text-transform: none;
+    min-width: 140px;
+    min-height: 40px;
+    background-color: #111827;
+}
+
+.card__heading a:after {
+    display: none;
+}
+
+.button::before, .button::after {
+    display: none !important;
+}
+
+@media (min-width: 750px) {
+    .button:hover {
+        transform: scale(1.02) !important;
     }
 }
