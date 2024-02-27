@@ -89,6 +89,7 @@
                     {%- if block.settings.menu != blank -%}
                       <ul class="footer-block__details-content list-unstyled">
                         {%- for link in block.settings.menu.links -%}
+                          {% if link.links == blank %}
                           <li>
                             <a
                               href="{{ link.url }}"
@@ -97,6 +98,27 @@
                               {{ link.title }}
                             </a>
                           </li>
+                          {% else %}
+                            <li>
+                              <label class="link link--text list-menu__item list-menu__item--link" for="footer--{{ link.title | handle }}">
+                                <span>{{ link.title }}</span>
+                                <input type="checkbox" id="footer--{{ link.title | handle }}">
+                                {% render 'icon-caret' %}
+                                <ul class="footer-block__details-content list-unstyled">
+                                  {% for childlink in link.links %}
+                                    <li>
+                                      <a
+                                        href="{{ childlink.url }}"
+                                        class="link link--text list-menu__item list-menu__item--link{% if childlink.active %} list-menu__item--active{% endif %}"
+                                      >
+                                        {{ childlink.title }}
+                                      </a>
+                                    </li>
+                                  {%endfor %}
+                                </ul>
+                              </label>
+                            </li>
+                          {% endif %}
                         {%- endfor -%}
                       </ul>
                     {%- endif -%}

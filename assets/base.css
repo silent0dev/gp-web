@@ -502,8 +502,15 @@ h6:empty {
   text-underline-offset: 0.3rem;
   color: rgb(var(--color-link));
   background-color: transparent;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   font-family: inherit;
+}
+
+@media (max-width: 768px) {
+  .link,
+  .customer a {
+    font-size: 1.2rem;
+  }
 }
 
 .link--text {
