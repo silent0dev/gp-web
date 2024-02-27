@@ -161,7 +161,7 @@
     color: #F3F1EE;
 }
 
-.slider-buttons {
+.slider-buttons:not(.slideshow__controls) {
     display: none !important;
 }
 
