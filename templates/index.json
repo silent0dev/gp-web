@@ -303,9 +303,47 @@
         "item_KrnqbU"
       ],
       "settings": {
+        "text_color": "#ffffff",
+        "back_color": "#1a1a1a",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_top_mob": 50,
+        "padding_bottom_mob": 50
+      }
+    },
+    "review_bqTR9X": {
+      "type": "review",
+      "blocks": {
+        "item_QNWpn6": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_4.png",
+            "star": "shopify:\/\/shop_images\/Group_3.png",
+            "heading": "David K.",
+            "text": "<p>Working long hours, I needed something quick and reliable for weeknight dinners. This grill's 1600W power means dinner is ready in no time. The adjustable temperature control is a lifesaver. Highly recommend!\"<\/p>"
+          }
+        },
+        "item_zHMgUh": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_9.png",
+            "star": "shopify:\/\/shop_images\/Group_3_1.png",
+            "heading": "Sandra L.",
+            "text": "<p>\"Living in an apartment, outdoor grilling isn't an option. The Golden Prairie Grill brings the barbecue experience indoors flawlessly. It's compact, powerful, and cleanup is a breeze!\"<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_QNWpn6",
+        "item_zHMgUh"
+      ],
+      "settings": {
+        "header": "What Customers Think",
+        "btn_text": "Read More Reviews",
+        "btn_link": "#",
         "text_color": "#FFFFFF",
         "back_color": "#1A1A1A",
-        "padding_top": 100,
+        "padding_top": 50,
         "padding_bottom": 100,
         "padding_top_mob": 50,
         "padding_bottom_mob": 50
@@ -319,6 +357,7 @@
     "featured_products_slider_xqEjj6",
     "image_banner_Kn6cmn",
     "featured_collection_xBXGfH",
-    "icon_with_text_iWwY7j"
+    "icon_with_text_iWwY7j",
+    "review_bqTR9X"
   ]
 }
