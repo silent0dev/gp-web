@@ -1,0 +1,91 @@
+{
+  "sections": {
+    "image_banner_N3GEgG": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_9RHxaJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "Got Questions?",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_9RHxaJ"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/image_16.png",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "faq_Kd6ryi": {
+      "type": "faq",
+      "blocks": {
+        "faq_zpDzXh": {
+          "type": "faq",
+          "settings": {
+            "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.?",
+            "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enim lorem hac a ultricies. Id ornare turpis vulputate enim sed magna sit. A id cursus dolor urna. Aliquam diam integer vitae eget. <\/p>"
+          }
+        },
+        "faq_jLyCYc": {
+          "type": "faq",
+          "settings": {
+            "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.?",
+            "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enim lorem hac a ultricies. Id ornare turpis vulputate enim sed magna sit. A id cursus dolor urna. Aliquam diam integer vitae eget. <\/p>"
+          }
+        },
+        "faq_RpG8bJ": {
+          "type": "faq",
+          "settings": {
+            "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.?",
+            "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enim lorem hac a ultricies. Id ornare turpis vulputate enim sed magna sit. A id cursus dolor urna. Aliquam diam integer vitae eget. <\/p>"
+          }
+        },
+        "faq_HBdBG4": {
+          "type": "faq",
+          "settings": {
+            "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.?",
+            "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enim lorem hac a ultricies. Id ornare turpis vulputate enim sed magna sit. A id cursus dolor urna. Aliquam diam integer vitae eget. <\/p>"
+          }
+        },
+        "faq_KktnRT": {
+          "type": "faq",
+          "settings": {
+            "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.?",
+            "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enim lorem hac a ultricies. Id ornare turpis vulputate enim sed magna sit. A id cursus dolor urna. Aliquam diam integer vitae eget. <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_zpDzXh",
+        "faq_jLyCYc",
+        "faq_RpG8bJ",
+        "faq_HBdBG4",
+        "faq_KktnRT"
+      ],
+      "settings": {
+        "title": "FAQ",
+        "description": "<p>Review some of our most commonly asked questions<\/p>",
+        "padding_top": 50,
+        "padding_bottom": 100,
+        "padding_top_mob": 50,
+        "padding_bottom_mob": 50
+      }
+    }
+  },
+  "order": [
+    "image_banner_N3GEgG",
+    "faq_Kd6ryi"
+  ]
+}

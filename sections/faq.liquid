@@ -1,0 +1,120 @@
+{% style %}
+.section-{{ section.id }}--padding {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+}
+
+@media(max-width: 768px) {
+    .section-{{ section.id }}--padding {
+        padding-top: {{ section.settings.padding_top_mob }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mob }}px;
+    }
+}
+{% endstyle %}
+<div class="section-{{ section.id }}--padding">
+    <div class="page-width">
+        {% if section.settings.title != blank %}
+            <h2 class="section--heading center">{{ section.settings.title }}</h2>
+        {% endif %}
+        {% if section.settings.description != blank %}
+            <div class="section--description center">
+                {{ section.settings.description }}
+            </div>
+        {% endif %}
+        <div class="faq-list">
+            {% for block in section.blocks %}
+                <div class="faq-item">
+                    <input type="checkbox" id="faq--{{ forloop.index }}-{{ block.id }}" class="faq-input">
+                    <label for="faq--{{ forloop.index }}-{{ block.id }}" class="faq-question">{{ block.settings.question }}{% render 'icon-caret' %}</label>
+                    <div class="faq-answer">{{ block.settings.answer }}</div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% schema %}
+{
+    "name": "Faq",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "FAQ"
+        },
+        {
+            "type": "richtext",
+            "id": "description",
+            "label": "Description",
+            "default": "<p>Review some of our most commonly asked questions</p>"
+        },
+        {
+            "type": "header",
+            "content": "t:sections.all.padding.section_padding_heading"
+          },
+          {
+            "type": "range",
+            "id": "padding_top",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_top",
+            "default": 50
+          },
+          {
+            "type": "range",
+            "id": "padding_bottom",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_bottom",
+            "default": 50
+          },
+          {
+            "type": "range",
+            "id": "padding_top_mob",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Mobile Padding Top",
+            "default": 50
+          },
+          {
+            "type": "range",
+            "id": "padding_bottom_mob",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Mobile Padding Bottom",
+            "default": 50
+          }
+    ],
+    "blocks": [
+        {
+            "type": "faq",
+            "name": "Faq",
+            "settings": [
+                {
+                    "type": "textarea",
+                    "id": "question",
+                    "label": "Question"
+                },
+                {
+                    "type": "richtext",
+                    "id": "answer",
+                    "label": "Answer"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Faq"
+        }
+    ]
+}
+{% endschema %}
