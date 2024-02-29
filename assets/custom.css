@@ -760,6 +760,10 @@
     margin: 0 auto;
 }
 
+.section--header.large-width {
+    max-width: 59rem;
+}
+
 .section--heading {
     font-size: 50px;
     line-height: 70px;
@@ -875,5 +879,10 @@
     .payment-text {
         font-size: 20px;
         line-height: 30px;
+    }
+
+    .image-with-text__content {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
 }
