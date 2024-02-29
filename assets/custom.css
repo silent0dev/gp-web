@@ -755,6 +755,11 @@
     }
 }
 
+.section--header {
+    max-width: 50rem;
+    margin: 0 auto;
+}
+
 .section--heading {
     font-size: 50px;
     line-height: 70px;
@@ -830,5 +835,45 @@
     .faq-answer {
         font-size: 12px;
         line-height: 18px;
+    }
+}
+
+.payment-list {
+    display: flex;
+    max-width: 1240px;
+    margin: 50px auto 0;
+}
+
+.payment-item {
+    width: 32%;
+    margin-left: 2%;
+    background-color: #fff;
+    padding: 45px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.payment-item:first-of-type {
+    margin: 0;
+}
+
+.payment-text {
+    font-size: 24px;
+    line-height: 36px;
+}
+
+@media (max-width: 768px) {
+    .payment-list {
+        flex-wrap: wrap;
+    }
+
+    .payment-item {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .payment-text {
+        font-size: 20px;
+        line-height: 30px;
     }
 }

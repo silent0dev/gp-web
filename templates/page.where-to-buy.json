@@ -1,14 +1,46 @@
 {
   "sections": {
-    "main": {
-      "type": "main-page",
+    "where_to_buy_JyJXkj": {
+      "type": "where-to-buy",
+      "blocks": {
+        "payment_9XVwYM": {
+          "type": "payment",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_12.png",
+            "text": "Amazon"
+          }
+        },
+        "payment_gNn9fc": {
+          "type": "payment",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_13.png",
+            "text": "Walmart"
+          }
+        },
+        "payment_q3eka6": {
+          "type": "payment",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_14.png",
+            "text": "Target"
+          }
+        }
+      },
+      "block_order": [
+        "payment_9XVwYM",
+        "payment_gNn9fc",
+        "payment_q3eka6"
+      ],
       "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
+        "title": "SHOP Golden Prairie NOW",
+        "description": "<p>Get Golden Prairie products from your favorite online retailer today:<\/p>",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_top_mob": 50,
+        "padding_bottom_mob": 50
       }
     }
   },
   "order": [
-    "main"
+    "where_to_buy_JyJXkj"
   ]
 }
