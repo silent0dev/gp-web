@@ -1040,3 +1040,33 @@
     box-sizing: border-box;
     flex-basis: calc(50% - 1rem);
 }
+
+.shopify-policy__container {
+    max-width: var(--page-width)!important;
+    padding: 100px 50px;
+}
+
+.shopify-policy__title {
+    color: #111827;
+    font-size: 50px;
+    line-height: 70px;
+}
+
+.shopify-policy__body {
+    margin-top: 100px;
+}
+
+@media (max-width: 768px) {
+    .shopify-policy__title {
+        font-size: 36px;
+        line-height: 50px;
+    }
+    
+    .shopify-policy__body {
+        margin-top: 50px;
+    }
+
+    .shopify-policy__container {
+        padding: 50px 20px;
+    }
+}
