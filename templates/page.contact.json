@@ -1,25 +1,56 @@
 {
   "sections": {
-    "main": {
-      "type": "main-page",
+    "contact_information_UzE9MU": {
+      "type": "contact-information",
+      "blocks": {
+        "info_ce9XVY": {
+          "type": "info",
+          "settings": {
+            "info": "<p><strong>WHOLESALE<\/strong><\/p><p>(626) 999-7682<\/p><p>char9728@gmail.com<\/p>"
+          }
+        },
+        "info_fydqQ4": {
+          "type": "info",
+          "settings": {
+            "info": "<p><strong>MAIN OFFICE<\/strong><\/p><p>(626) 999-7682<\/p><p>Hours of Operation: Monday-Friday8:30am - 5:00pm PST<\/p>"
+          }
+        },
+        "info_VWwfEc": {
+          "type": "info",
+          "settings": {
+            "info": "<p><strong>GENERAL INQUIRES<\/strong><\/p><p>(626) 999-7682<\/p><p>char9728@gmail.com<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "info_ce9XVY",
+        "info_fydqQ4",
+        "info_VWwfEc"
+      ],
       "settings": {
-        "padding_top": 36,
-        "padding_bottom": 36
+        "image": "shopify:\/\/shop_images\/Screen_Shot_2024-02-19_at_8.25_1.png",
+        "title": "Contact",
+        "description": "<p>Your culinary journey begins with a conversation.<\/p>",
+        "padding_top": 100,
+        "padding_bottom": 50,
+        "padding_top_mob": 50,
+        "padding_bottom_mob": 26
       }
     },
     "form": {
       "type": "contact-form",
       "settings": {
-        "heading": "",
-        "heading_size": "h1",
+        "heading": "WE’RE EAGER TO HEAR FROM YOU",
+        "heading_size": "h0",
+        "description": "<p>Reach out to us for any questions, suggestions, or a dash of cooking inspiration.<\/p>",
         "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 100,
+        "padding_bottom": 100
       }
     }
   },
   "order": [
-    "main",
+    "contact_information_UzE9MU",
     "form"
   ]
 }

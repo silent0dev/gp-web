@@ -633,3 +633,124 @@
     margin: 0 !important;
     padding: 0 !important;
 }
+
+.contact .field__input {
+    background-color: #d9d9d9;
+    color: #000000;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 30px 26px;
+    border-radius: 12px;
+}
+
+.contact .field__input::placeholder {
+    color: #222;
+}
+
+.contact .text-area {
+    min-height: 180px;
+}
+
+.contact .button {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    min-width: 200px;
+    min-height: 40px;
+    text-transform: uppercase;
+    background-color: #111827;
+    border-radius: 6px;
+}
+
+.contact-header {
+    max-width: 510px;
+    margin: 0 auto 100px;
+}
+
+.contact-header .title {
+    color: #111827;
+}
+
+.contact-header .rte {
+    font-size: 20px;
+    line-height: 30px;
+    color: #6d7280;
+}
+
+.contact-title {
+    color: #111827;
+    font-size: 60px;
+    line-height: 84px;
+}
+
+.contact-description {
+    font-size: 20px;
+    line-height: 30px;
+    color: #6d7280;
+}
+
+.contact-info-wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.contact-info__content, .contact-info__image {
+    width: 50%;
+}
+
+.contact-info__image {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.contact-info__item {
+    max-width: 480px;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 16px;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.contact-info__item:last-of-type {
+    border-bottom: none;
+}
+
+.contact-info__item p {
+    margin: 3px 0;
+}
+
+@media (max-width: 768px) {
+    .contact-header {
+        margin-bottom: 75px;
+    }
+
+    .contact-info-wrapper {
+        flex-direction: column-reverse;
+        margin-top: 70px;
+    }
+
+    .contact-info__content, .contact-info__image {
+        width: 100%;
+    }
+
+    .contact-info__image {
+        margin-bottom: 20px;
+    }
+
+    .contact-title, .contact-header .title {
+        font-size: 30px;
+        line-height: 38px;
+    }
+
+    .contact-description, .contact-header .rte {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .contact-info__item {
+        text-align: center;
+    }
+}

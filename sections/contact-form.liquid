@@ -16,19 +16,23 @@
 
 <div class="color-{{ section.settings.color_scheme }} gradient">
   <div class="contact page-width page-width--narrow section-{{ section.id }}-padding">
-    {%- if section.settings.heading != blank -%}
-      <h2 class="title title-wrapper--no-top-margin inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-        {{ section.settings.heading }}
-      </h2>
-    {%- else -%}
-      <h2 class="visually-hidden">{{ 'templates.contact.form.title' | t }}</h2>
-    {%- endif -%}
+    <div class="contact-header">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="title center title-wrapper--no-top-margin inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+          {{ section.settings.heading }}
+        </h2>
+      {%- else -%}
+        <h2 class="visually-hidden">{{ 'templates.contact.form.title' | t }}</h2>
+      {%- endif -%}
+      <div class="inline-richtext rte center">{{ section.settings.description }}</div>
+    </div>
     {%- liquid
       assign contact_form_class = 'isolate'
       if settings.animations_reveal_on_scroll
         assign contact_form_class = 'isolate scroll-trigger animate--slide-in'
       endif
     -%}
+    <p class=""><b>* Required Fields</b></p>
     {%- form 'contact', id: 'ContactForm', class: contact_form_class -%}
       {%- if form.posted_successfully? -%}
         <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
@@ -51,64 +55,64 @@
           </li>
         </ul>
       {%- endif -%}
-      <div class="contact__fields">
-        <div class="field">
-          <input
-            class="field__input"
-            autocomplete="name"
-            type="text"
-            id="ContactForm-name"
-            name="contact[{{ 'templates.contact.form.name' | t }}]"
-            value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
-            placeholder="{{ 'templates.contact.form.name' | t }}"
-          >
-          <label class="field__label" for="ContactForm-name">{{ 'templates.contact.form.name' | t }}</label>
-        </div>
-        <div class="field field--with-error">
-          <input
-            autocomplete="email"
-            type="email"
-            id="ContactForm-email"
-            class="field__input"
-            name="contact[email]"
-            spellcheck="false"
-            autocapitalize="off"
-            value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
-            aria-required="true"
-            {% if form.errors contains 'email' %}
-              aria-invalid="true"
-              aria-describedby="ContactForm-email-error"
-            {% endif %}
-            placeholder="{{ 'templates.contact.form.email' | t }}"
-          >
-          <label class="field__label" for="ContactForm-email">
-            {{- 'templates.contact.form.email' | t }}
-            <span aria-hidden="true">*</span></label
-          >
-          {%- if form.errors contains 'email' -%}
-            <small class="contact__field-error" id="ContactForm-email-error">
-              <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
-              <span class="form__message">
-                {%- render 'icon-error' -%}
-                {{- form.errors.translated_fields.email | capitalize }}
-                {{ form.errors.messages.email -}}
-              </span>
-            </small>
-          {%- endif -%}
-        </div>
+      <div class="field">
+        <input
+          class="field__input"
+          autocomplete="name"
+          type="text"
+          id="ContactForm-name"
+          name="contact[{{ 'templates.contact.form.name' | t }}]"
+          value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+          placeholder="* NAME"
+        >
+      </div>
+      <div class="field field--with-error">
+        <input
+          autocomplete="email"
+          type="email"
+          id="ContactForm-email"
+          class="field__input"
+          name="contact[email]"
+          spellcheck="false"
+          autocapitalize="off"
+          value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+          aria-required="true"
+          {% if form.errors contains 'email' %}
+            aria-invalid="true"
+            aria-describedby="ContactForm-email-error"
+          {% endif %}
+          placeholder="* EMAIL"
+        >
+        {%- if form.errors contains 'email' -%}
+          <small class="contact__field-error" id="ContactForm-email-error">
+            <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
+            <span class="form__message">
+              {%- render 'icon-error' -%}
+              {{- form.errors.translated_fields.email | capitalize }}
+              {{ form.errors.messages.email -}}
+            </span>
+          </small>
+        {%- endif -%}
       </div>
       <div class="field">
         <input
-          type="tel"
-          id="ContactForm-phone"
+          type="text"
+          id="ContactForm-order"
           class="field__input"
-          autocomplete="tel"
-          name="contact[{{ 'templates.contact.form.phone' | t }}]"
-          pattern="[0-9\-]*"
-          value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
-          placeholder="{{ 'templates.contact.form.phone' | t }}"
+          name="contact[order_number]"
+          value="{% if form.order_number %}{{ form.order_number }}{% endif %}"
+          placeholder="* ORDER NUMBER"
         >
-        <label class="field__label" for="ContactForm-phone">{{ 'templates.contact.form.phone' | t }}</label>
+      </div>
+      <div class="field">
+        <input
+          type="text"
+          id="ContactForm-subject"
+          class="field__input"
+          name="contact[subject]"
+          value="{% if form.subject %}{{ form.subject }}{% endif %}"
+          placeholder="SUBJECT"
+        >
       </div>
       <div class="field">
         <textarea
@@ -116,17 +120,14 @@
           id="ContactForm-body"
           class="text-area field__input"
           name="contact[{{ 'templates.contact.form.comment' | t }}]"
-          placeholder="{{ 'templates.contact.form.comment' | t }}"
+          placeholder="* MESSAGE"
         >
           {{- form.body -}}
         </textarea>
-        <label class="form__label field__label" for="ContactForm-body">
-          {{- 'templates.contact.form.comment' | t -}}
-        </label>
       </div>
-      <div class="contact__button">
+      <div class="contact__button center">
         <button type="submit" class="button">
-          {{ 'templates.contact.form.send' | t }}
+          Submit
         </button>
       </div>
     {%- endform -%}
@@ -167,6 +168,11 @@
       ],
       "default": "h1",
       "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
     },
     {
       "type": "color_scheme",
