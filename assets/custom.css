@@ -886,3 +886,11 @@
         padding-right: 0 !important;
     }
 }
+
+.page--warranty .section--header {
+    max-width: 65rem;
+}
+
+.page--warranty  .section--description p {
+    margin: 0;
+}

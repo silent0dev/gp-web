@@ -1,14 +1,39 @@
 {
   "sections": {
+    "custom_rich_text_cnJ34F": {
+      "type": "custom-rich-text",
+      "settings": {
+        "title": "WARRANTY",
+        "description": "<p>Enjoy peace of mind thanks to our comprehensive warranty <\/p><p>Warranty and User Manual attached<\/p>",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "padding_top_mob": 30,
+        "padding_bottom_mob": 30
+      }
+    },
     "main": {
       "type": "main-page",
       "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
+        "hidden_title": true,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "contact_form_qjF8gw": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "WE’RE EAGER TO HEAR FROM YOU",
+        "heading_size": "h1",
+        "description": "<p>Reach out to us for any questions, suggestions, or a dash of cooking inspiration.<\/p>",
+        "color_scheme": "",
+        "padding_top": 60,
+        "padding_bottom": 100
       }
     }
   },
   "order": [
-    "main"
+    "custom_rich_text_cnJ34F",
+    "main",
+    "contact_form_qjF8gw"
   ]
 }
