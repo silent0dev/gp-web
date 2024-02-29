@@ -1792,6 +1792,10 @@ input[type='checkbox'] {
 
 .customer .field .form__message svg {
   align-self: start;
+  position: relative;
+  top: unset;
+  transform: unset;
+  right: unset;
 }
 
 .form-status {

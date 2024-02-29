@@ -16,11 +16,14 @@
 
 <div class="customer login section-{{ section.id }}-padding">
   <h1 id="recover" tabindex="-1">
-    {{ 'customer.recover_password.title' | t }}
+    Forgot Password?
   </h1>
   <div>
     <p>
-      {{ 'customer.recover_password.subtext' | t }}
+      Know your password? 
+      <a href="#login" style="display: inline">
+        Login
+      </a>
     </p>
 
     {%- form 'recover_customer_password' -%}
@@ -41,9 +44,6 @@
           {% endif %}
           placeholder="{{ 'customer.login_page.email' | t }}"
         >
-        <label for="RecoverEmail">
-          {{ 'customer.login_page.email' | t }}
-        </label>
       </div>
       {%- if form.errors -%}
         <small id="RecoverEmail-email-error" class="form__message">
@@ -60,15 +60,12 @@
       <button>
         {{ 'customer.login_page.submit' | t }}
       </button>
-
-      <a href="#login">
-        {{ 'customer.login_page.cancel' | t }}
-      </a>
+      <p>We know the feeling! Please enter the email address linked to your account.</p>
     {%- endform -%}
   </div>
 
   <h1 id="login" tabindex="-1">
-    {{ 'customer.login_page.title' | t }}
+    Welcome back!<br>Log in to get started
   </h1>
   <div>
     {%- if recover_success == true -%}
@@ -82,6 +79,10 @@
       </h3>
     {%- endif -%}
     {%- form 'customer_login', novalidate: 'novalidate' -%}
+      <a href="{{ routes.account_register_url }}" style="margin-bottom: 2rem">
+        Create your account
+      </a>
+      <input type="hidden" name="return_to" value="/account">
       {%- if form.errors -%}
         <h2 class="form__message" tabindex="-1" autofocus>
           <span class="visually-hidden">{{ 'accessibility.error' | t }} </span>
@@ -107,11 +108,8 @@
           {% if form.errors contains 'form' %}
             aria-invalid="true"
           {% endif %}
-          placeholder="{{ 'customer.login_page.email' | t }}"
+          placeholder="Enter your email"
         >
-        <label for="CustomerEmail">
-          {{ 'customer.login_page.email' | t }}
-        </label>
       </div>
 
       {%- if form.password_needed -%}
@@ -125,11 +123,11 @@
             {% if form.errors contains 'form' %}
               aria-invalid="true"
             {% endif %}
-            placeholder="{{ 'customer.login_page.password' | t }}"
+            placeholder="Enter your password"
           >
-          <label for="CustomerPassword">
-            {{ 'customer.login_page.password' | t }}
-          </label>
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.32675 7.82368C2.1031 4.09561 5.34852 1.44669 8.99918 1.44669C12.6487 1.44669 15.8941 4.09561 16.6716 7.82368C16.7024 7.97162 16.7907 8.10126 16.9171 8.18409C17.0435 8.26692 17.1976 8.29615 17.3455 8.26536C17.4934 8.23457 17.6231 8.14627 17.7059 8.01989C17.7887 7.89351 17.818 7.7394 17.7872 7.59146C16.9027 3.35114 13.2031 0.30835 8.99918 0.30835C4.79528 0.30835 1.09567 3.35114 0.211178 7.59146C0.180383 7.7394 0.209617 7.89351 0.292447 8.01989C0.375278 8.14627 0.50492 8.23457 0.652855 8.26536C0.800789 8.29615 0.954898 8.26692 1.08128 8.18409C1.20766 8.10126 1.29596 7.97162 1.32675 7.82368ZM8.98779 3.72338C10.0445 3.72338 11.0579 4.14314 11.805 4.89032C12.5522 5.6375 12.972 6.6509 12.972 7.70757C12.972 8.76425 12.5522 9.77764 11.805 10.5248C11.0579 11.272 10.0445 11.6918 8.98779 11.6918C7.93112 11.6918 6.91772 11.272 6.17054 10.5248C5.42336 9.77764 5.0036 8.76425 5.0036 7.70757C5.0036 6.6509 5.42336 5.6375 6.17054 4.89032C6.91772 4.14314 7.93112 3.72338 8.98779 3.72338Z" fill="#6A707C"/>
+          </svg>              
         </div>
 
         <a href="#recover">
@@ -140,10 +138,6 @@
       <button>
         {{ 'customer.login_page.sign_in' | t }}
       </button>
-
-      <a href="{{ routes.account_register_url }}">
-        {{ 'customer.login_page.create_account' | t }}
-      </a>
     {%- endform -%}
   </div>
 

@@ -911,3 +911,56 @@
     padding: 18px 60px;
     background-color: #4C4C4C;
 }
+
+.customer .field input {
+    border: 1px solid #F7F8F9;
+    background-color: #E8ECF4;
+    font-size: 14px;
+    line-height: 17px;
+    padding: 18px;
+}
+
+.customer .field input::placeholder {
+    color: #8391A1;
+}
+
+.customer .field {
+    position: relative;
+}
+
+.customer .field svg {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.customer a {
+    font-size: 14px;
+    line-height: 21px;
+    color: #6A707C;
+    font-weight: 500;
+}
+
+.customer button {
+    text-transform: none;
+    font-size: 14px;
+    line-height: 21px;
+    color: #FFFFFF;
+    background-color: #4C4C4C;
+    padding: 20px;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.customer button::before, .customer button::after {
+    display: none;
+}
+
+.customer h1 {
+    color: #222222;
+}
+
+.customer .field {
+    flex-direction: column;
+}

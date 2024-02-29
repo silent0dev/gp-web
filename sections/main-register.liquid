@@ -24,9 +24,13 @@
     </symbol>
   </svg>
   <h1>
-    {{ 'customer.register.title' | t }}
+    Hi there!<br>Register to get started
   </h1>
+  <div>
+    <p>Have an account? <a href="{{ routes.account_login_url }}">Sign in</a></p>
+  </div>
   {%- form 'create_customer', novalidate: 'novalidate' -%}
+    <input type="hidden" name="return_to" value="/account">
     {%- if form.errors -%}
       <h2 class="form__message" tabindex="-1" autofocus>
         <svg aria-hidden="true" focusable="false">
@@ -60,9 +64,6 @@
         autocomplete="given-name"
         placeholder="{{ 'customer.register.first_name' | t }}"
       >
-      <label for="RegisterForm-FirstName">
-        {{ 'customer.register.first_name' | t }}
-      </label>
     </div>
     <div class="field">
       <input
@@ -75,9 +76,6 @@
         autocomplete="family-name"
         placeholder="{{ 'customer.register.last_name' | t }}"
       >
-      <label for="RegisterForm-LastName">
-        {{ 'customer.register.last_name' | t }}
-      </label>
     </div>
     <div class="field">
       <input
@@ -97,9 +95,6 @@
         {% endif %}
         placeholder="{{ 'customer.register.email' | t }}"
       >
-      <label for="RegisterForm-email">
-        {{ 'customer.register.email' | t }}
-      </label>
     </div>
     {%- if form.errors contains 'email' -%}
       <span id="RegisterForm-email-error" class="form__message">
@@ -122,9 +117,6 @@
         {% endif %}
         placeholder="{{ 'customer.register.password' | t }}"
       >
-      <label for="RegisterForm-password">
-        {{ 'customer.register.password' | t }}
-      </label>
     </div>
     {%- if form.errors contains 'password' -%}
       <span id="RegisterForm-password-error" class="form__message">
@@ -136,7 +128,7 @@
       </span>
     {%- endif -%}
     <button>
-      {{ 'customer.register.submit' | t }}
+      Create
     </button>
   {%- endform -%}
 </div>

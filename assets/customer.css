@@ -8,7 +8,7 @@
 
 @media screen and (min-width: 750px) {
   .customer:not(.account):not(.order) {
-    max-width: 47.8rem;
+    max-width: 61rem;
   }
 }
 
@@ -19,6 +19,9 @@
 
 .customer form {
   margin-top: 4rem;
+  max-width: 35rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .customer button {
@@ -342,6 +345,8 @@
 
 .login .field + a {
   margin-top: 1rem;
+  margin-left: auto;
+  text-decoration: none;
 }
 
 .login p {
