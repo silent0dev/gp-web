@@ -964,3 +964,79 @@
 .customer .field {
     flex-direction: column;
 }
+
+.empty-order {
+    max-width: 55rem;
+    margin: 5rem auto;
+}
+
+.empty-order .section--heading {
+    margin: 20px 0;
+}
+
+.empty-order .button {
+    padding: 16px 45px;
+    text-decoration: none;
+    background-color: #757575;
+    color: #fff;
+    min-height: 0;
+    margin-top: 50px;
+}
+
+.order-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.order-nav a {
+    font-size: 32px;
+    line-height: 52px;
+    color: #1A1A1A;
+    text-decoration: none;
+    padding-bottom: 5px;
+    border-bottom: 5px solid #4C4C4C;
+}
+
+.order-nav a:not(.active) {
+    border-color: transparent;
+}
+
+@media (max-width: 768px) {
+    .order-nav a {
+        font-size: 16px;
+        line-height: 35px;
+        border-width: 4px;
+    }
+}
+
+.addresses .field input, .addresses .field select {
+    padding: 12px 26px;
+    color: #000000;
+    background-color: #D9D9D9;
+    border: none;
+    border-radius: 12px;
+    height: auto;
+}
+
+.addresses .field input::placeholder {
+    color: #222222;
+}
+
+.addresses button {
+    width: auto;
+    background-color: #111827;
+    color: #fff;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 10px 70px;
+}
+
+.addresses form > .center {
+    text-align: center;
+}
+
+.addresses .two-basis {
+    box-sizing: border-box;
+    flex-basis: calc(50% - 1rem);
+}

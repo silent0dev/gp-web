@@ -688,6 +688,7 @@ label[for='AddressProvinceNew'] {
 .addresses form {
   display: flex;
   flex-flow: row wrap;
+  max-width: 100%;
 }
 
 .addresses form > div {
@@ -702,11 +703,7 @@ label[for='AddressProvinceNew'] {
 }
 
 li[data-address] {
-  margin-top: 5rem;
-}
-
-.addresses [aria-expanded='false'] ~ div[id] {
-  display: none;
+  margin-top: 7.5rem;
 }
 
 .addresses [aria-expanded='true'] ~ div[id] {
@@ -752,9 +749,4 @@ li[data-address] > h2 {
     box-sizing: border-box;
     flex-basis: calc(50% - 1rem);
   }
-}
-
-.addresses form > div:nth-of-type(7),
-.addresses form > div:nth-of-type(7) + div[id] {
-  margin-top: 1.5rem;
 }
