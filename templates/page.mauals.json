@@ -1,14 +1,96 @@
 {
   "sections": {
-    "main": {
-      "type": "main-page",
+    "custom_rich_text_QxVVjF": {
+      "type": "custom-rich-text",
       "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
+        "title": "OUR PRODUCTS MANUALS",
+        "description": "<p>Unlock culinary excellence with our easy-to-follow user manuals<\/p>",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mob": 50,
+        "padding_bottom_mob": 50
+      }
+    },
+    "download_grid_Vk6EWC": {
+      "type": "download-grid",
+      "blocks": {
+        "item_jDBTWG": {
+          "type": "item",
+          "settings": {
+            "product": "deep-dish-waffle-maker",
+            "link": "#"
+          }
+        },
+        "item_gF4r4C": {
+          "type": "item",
+          "settings": {
+            "product": "easy-pot-electric-multi-cooker",
+            "link": "#"
+          }
+        },
+        "item_dRVheH": {
+          "type": "item",
+          "settings": {
+            "product": "dual-waffle-maker",
+            "link": "#"
+          }
+        },
+        "item_7qYNjp": {
+          "type": "item",
+          "settings": {
+            "product": "electric-smokeless-grill",
+            "link": "#"
+          }
+        },
+        "item_RMid4K": {
+          "type": "item",
+          "settings": {
+            "product": "electric-griddles",
+            "link": "#"
+          }
+        },
+        "item_GpfXT4": {
+          "type": "item",
+          "settings": {
+            "product": "large-grill-griddle-combo",
+            "link": "#"
+          }
+        },
+        "item_NVhkxd": {
+          "type": "item",
+          "settings": {
+            "product": "grill-griddle-combo-with-glass-lid",
+            "link": "#"
+          }
+        },
+        "item_yDWdUc": {
+          "type": "item",
+          "settings": {
+            "product": "electric-crepe-maker",
+            "link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "item_jDBTWG",
+        "item_gF4r4C",
+        "item_dRVheH",
+        "item_7qYNjp",
+        "item_RMid4K",
+        "item_GpfXT4",
+        "item_NVhkxd",
+        "item_yDWdUc"
+      ],
+      "settings": {
+        "padding_top": 66,
+        "padding_bottom": 66,
+        "padding_top_mob": 50,
+        "padding_bottom_mob": 50
       }
     }
   },
   "order": [
-    "main"
+    "custom_rich_text_QxVVjF",
+    "download_grid_Vk6EWC"
   ]
 }

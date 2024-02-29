@@ -1,0 +1,110 @@
+{% style %}
+.section-{{ section.id }}--padding {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+}
+
+@media(max-width: 768px) {
+    .section-{{ section.id }}--padding {
+        padding-top: {{ section.settings.padding_top_mob }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mob }}px;
+    }
+}
+{% endstyle %}
+<div class="section-{{ section.id }}--padding">
+    <div class="page-width">
+        <div class="download-grid">
+            {% for block in section.blocks %}
+                {% assign product = block.settings.product %}
+                <div class="download-item">
+                    <a class="download-product" href="{{ product.url }}">
+                        <p class="download-type center">{{ product.type }}</p>
+                        <p class="download-title center">{{ product.title }}</p>
+                        <div class="download-image">
+                            <div class="gp-image" style="padding-bottom: 100%">
+                                {{ product.featured_image | img_url: '350x' | img_tag }}
+                            </div>
+                        </div>
+                    </a>
+                    <div class="download-button center">
+                        <a class="button button--primary" href="{{ block.settings.link }}">Download Manual</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% schema %}
+{
+    "name": "Download Grid",
+    "settings": [
+        {
+            "type": "header",
+            "content": "t:sections.all.padding.section_padding_heading"
+          },
+          {
+            "type": "range",
+            "id": "padding_top",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_top",
+            "default": 50
+          },
+          {
+            "type": "range",
+            "id": "padding_bottom",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_bottom",
+            "default": 50
+          },
+          {
+            "type": "range",
+            "id": "padding_top_mob",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Mobile Padding Top",
+            "default": 50
+          },
+          {
+            "type": "range",
+            "id": "padding_bottom_mob",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Mobile Padding Bottom",
+            "default": 50
+          }
+    ],
+    "blocks": [
+        {
+            "type": "item",
+            "name": "Item",
+            "settings": [
+                {
+                    "type": "product",
+                    "id": "product",
+                    "label": "Product"
+                },
+                {
+                    "type": "url",
+                    "id": "link",
+                    "label": "Download Link"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Download Grid"
+        }
+    ]
+}
+{% endschema %}
