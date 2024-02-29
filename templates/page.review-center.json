@@ -1,14 +1,57 @@
 {
   "sections": {
-    "main": {
-      "type": "main-page",
+    "custom_rich_text_tUUPcp": {
+      "type": "custom-rich-text",
       "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
+        "title": "See What Other Customers are Saying",
+        "description": "<p>We have countless happy customers. Here are just a few of their thoughts.<\/p>",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mob": 50,
+        "padding_bottom_mob": 50
+      }
+    },
+    "review_XjYFMU": {
+      "type": "review",
+      "blocks": {
+        "item_qA9waB": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_4.png",
+            "star": "shopify:\/\/shop_images\/Group_3.png",
+            "heading": "David K.",
+            "text": "<p>Working long hours, I needed something quick and reliable for weeknight dinners. This grill's 1600W power means dinner is ready in no time. The adjustable temperature control is a lifesaver. Highly recommend!\"<\/p>"
+          }
+        },
+        "item_bDWFXk": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_9.png",
+            "star": "shopify:\/\/shop_images\/Group_3_1.png",
+            "heading": "Sandra L.",
+            "text": "<p>\"Living in an apartment, outdoor grilling isn't an option. The Golden Prairie Grill brings the barbecue experience indoors flawlessly. It's compact, powerful, and cleanup is a breeze!\"<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_qA9waB",
+        "item_bDWFXk"
+      ],
+      "settings": {
+        "header": "",
+        "btn_text": "",
+        "btn_link": "",
+        "text_color": "#FFFFFF",
+        "back_color": "#1A1A1A",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mob": 50,
+        "padding_bottom_mob": 50
       }
     }
   },
   "order": [
-    "main"
+    "custom_rich_text_tUUPcp",
+    "review_XjYFMU"
   ]
 }
