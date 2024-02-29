@@ -894,3 +894,20 @@
 .page--warranty  .section--description p {
     margin: 0;
 }
+
+.search__input.field__input {
+    border-bottom: 1px solid;
+}
+
+.search-button {
+    padding: 5rem 0;
+}
+
+.search-button .button {
+    font-size: 16px;
+    line-height: 24px;
+    color: #E7E5E2;
+    text-transform: none;
+    padding: 18px 60px;
+    background-color: #4C4C4C;
+}
