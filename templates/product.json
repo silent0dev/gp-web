@@ -129,6 +129,15 @@
         "padding_bottom_mob": 50
       }
     },
+    "product-gallery": {
+      "type": "product-gallery",
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "padding_top_mob": 0,
+        "padding_bottom_mob": 50
+      }
+    },
     "icon_with_text_zBbCKA": {
       "type": "icon-with-text",
       "blocks": {
@@ -204,6 +213,7 @@
     "product-video_zBbCKA",
     "product-image-with-text",
     "product-features",
+    "product-gallery",
     "icon_with_text_zBbCKA",
     "related-products"
   ]
