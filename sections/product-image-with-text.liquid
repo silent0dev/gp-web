@@ -17,18 +17,20 @@
     <div class="page-width">
         <div class="product-image-width-text">
             <h2 class="iwt--header center">{{ product.metafields.custom.iwt_header }}</h2>
-            {% for image in product.metafields.custom.iwt_image.value %}
-                {% assign m = forloop.index0 | modulo: 2 %}
-                <div class="product-iwt--item {% if m == 0 %}reverse{% endif %}">
-                    <div class="iwt--image">
-                        {{ image | img_url: '600x' | img_tag }}
+            <div class="iwt-list {% if product.metafields.custom.iwt_title.value.size >= 4 %}iwt-grid{% endif %}">
+                {% for image in product.metafields.custom.iwt_image.value %}
+                    {% assign m = forloop.index0 | modulo: 2 %}
+                    <div class="product-iwt--item {% if m == 0 %}reverse{% endif %}">
+                        <div class="iwt--image">
+                            {{ image | img_url: '600x' | img_tag }}
+                        </div>
+                        <div class="iwt--text">
+                            <h4 class="iwt--text__header">{{ product.metafields.custom.iwt_title.value[forloop.index0] }}</h4>
+                            <div class="iwt--text__content">{{ product.metafields.custom.iwt_description.value[forloop.index0] }}</div>
+                        </div>
                     </div>
-                    <div class="iwt--text">
-                        <h4 class="iwt--text__header">{{ product.metafields.custom.iwt_title.value[forloop.index0] }}</h4>
-                        <div class="iwt--text__content">{{ product.metafields.custom.iwt_description.value[forloop.index0] }}</div>
-                    </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
         </div>
     </div>
 </div>

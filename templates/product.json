@@ -212,8 +212,8 @@
         "show_vendor": false,
         "show_rating": false,
         "columns_mobile": "1",
-        "padding_top": 36,
-        "padding_bottom": 28
+        "padding_top": 100,
+        "padding_bottom": 100
       }
     }
   },
