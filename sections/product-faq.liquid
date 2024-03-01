@@ -1,0 +1,89 @@
+{% style %}
+.section-{{ section.id }}--padding {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    background-color: #F3F1EE;
+}
+
+@media(max-width: 768px) {
+    .section-{{ section.id }}--padding {
+        padding-top: {{ section.settings.padding_top_mob }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mob }}px;
+    }
+}
+{% endstyle %}
+{% if product.metafields.custom.faq_questions != blank %}
+<div class="section-{{ section.id }}--padding">
+    <div class="page-width">
+        <div class="product-faq">
+            <h2 class="product-faq__header">{{ product.metafields.custom.faq_header }}</h2>
+            <div class="product-faq-wrapper">
+                <div class="product-faq-text">
+                    <div class="product-faq__description">{{ product.metafields.custom.faq_description | metafield_tag }}</div>
+                    <div class="product-faq__contact-info">{{ product.metafields.custom.faq_contact_info | metafield_tag }}</div>
+                </div>
+                <div class="product-faq-list">
+                    {% for question in product.metafields.custom.faq_questions.value %}
+                        <div class="product-faq-item">
+                            <input type="checkbox" id="product-faq-{{ forloop.index }}">
+                            <label class="product-faq-question" for="product-faq-{{ forloop.index }}">{{ question }}{% render 'icon-right-arrow-black' %}</label>
+                            <div class="product-faq-answer">{{ product.metafields.custom.faq_answers.value[forloop.index0] }}</div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% schema %}
+{
+    "name": "Product Faq",
+    "settings": [
+        {
+            "type": "header",
+            "content": "t:sections.all.padding.section_padding_heading"
+          },
+          {
+            "type": "range",
+            "id": "padding_top",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_top",
+            "default": 50
+          },
+          {
+            "type": "range",
+            "id": "padding_bottom",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_bottom",
+            "default": 50
+          },
+          {
+            "type": "range",
+            "id": "padding_top_mob",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Mobile Padding Top",
+            "default": 50
+          },
+          {
+            "type": "range",
+            "id": "padding_bottom_mob",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Mobile Padding Bottom",
+            "default": 50
+          }
+    ]
+}
+{% endschema %}

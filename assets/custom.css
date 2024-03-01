@@ -1592,3 +1592,127 @@
 .product-gallery .swiper-pagination-bullet {
     background-color: rgba(255, 255, 255, 0.7) !important;
 }
+
+.product-faq__header {
+    font-size: 50px;
+    line-height: 75px;
+    margin: 0;
+    color: #1A1A1A;
+}
+
+.product-faq-wrapper {
+    margin-top: 10px;
+    display: flex;
+}
+
+.product-faq-text, .product-faq-list {
+    width: 50%;
+}
+
+.product-faq-text {
+    padding-right: 50px;
+}
+
+.product-faq__description, .product-faq__contact-info {
+    font-size: 16px;
+    line-height: 24px;
+    color: #1A1A1A;
+}
+
+.product-faq__contact-info {
+    margin-top: 40px;
+}
+
+.product-faq__contact-info p {
+    margin: 0;
+}
+
+.product-faq-item {
+    width: 100%;
+}
+
+.product-faq-item input {
+    display: none;
+}
+
+.product-faq-question {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    color: #1A1A1A;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(26, 26, 26, 0.12);
+    width: 100%;
+    cursor: pointer;
+}
+
+.product-faq-item:last-of-type .product-faq-question {
+    border-bottom: none;
+}
+
+.product-faq-question svg {
+    transform: rotate(90deg);
+    transition: 0.3s;
+}
+
+.product-faq-item input:not(:checked) ~ .product-faq-answer {
+    display: none;
+}
+
+.product-faq-item input:checked + .product-faq-question svg {
+    transform: rotate(270deg);
+}
+
+.product-faq-answer {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 20px;
+    border-bottom: 1px solid rgba(26, 26, 26, 0.12);
+}
+
+@media (max-width: 768px) {
+    .product-faq__header {
+        font-size: 18px;
+        line-height: 27px;
+    }
+
+    .product-faq-wrapper {
+        flex-wrap: wrap;
+    }
+
+    .product-faq-text, .product-faq-list {
+        width: 100%;
+    }
+
+    .product-faq-text {
+        padding-right: 0;
+    }
+
+    .product-faq__description, .product-faq__contact-info {
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .product-faq-list {
+        margin-top: 10px;
+    }
+
+    .product-faq-question {
+        padding: 15px 0;
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .product-faq-answer {
+        padding: 15px;
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .product-faq-question svg {
+        width: 12px;
+    }
+}
