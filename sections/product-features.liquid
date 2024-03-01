@@ -1,0 +1,100 @@
+{% style %}
+.section-{{ section.id }}--padding {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+}
+
+@media(max-width: 768px) {
+    .section-{{ section.id }}--padding {
+        padding-top: {{ section.settings.padding_top_mob }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mob }}px;
+    }
+}
+{% endstyle %}
+{% if product.metafields.custom.features_image != blank %}
+<div class="section-{{ section.id }}--padding">
+    <div class="page-width">
+        <h2 class="features--header">{{ product.metafields.custom.features_header }}</h2>
+        <div class="features--list small-hide">
+            {% for image in product.metafields.custom.features_image.value %}
+                <div class="features-item">
+                    <div class="features-image">
+                        {{ image | img_url: '400x' | img_tag }}
+                    </div>
+                    <h4 class="features-title">{{ product.metafields.custom.features_title.value[forloop.index0] }}</h4>
+                    <div class="features-description">
+                        {{ product.metafields.custom.features_description.value[forloop.index0] }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="features--list large-up-hide medium-hide swiper" id="gp-swiper-{{ section.id }}" data-desktop-settings='{"slidesPerView": 3, "spaceBetween": 15}' data-mobile-settings='{"slidesPerView": 2, "spaceBetween": 15}'>
+            <div class="swiper-wrapper">
+                {% for image in product.metafields.custom.features_image.value %}
+                    <div class="swiper-slide features-item">
+                        <div class="features-image">
+                            {{ image | img_url: '400x' | img_tag }}
+                        </div>
+                        <h4 class="features-title">{{ product.metafields.custom.features_title.value[forloop.index0] }}</h4>
+                        <div class="features-description">
+                            {{ product.metafields.custom.features_description.value[forloop.index0] }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% schema %}
+{
+    "name": "Product Features",
+    "settings": [
+        {
+            "type": "header",
+            "content": "t:sections.all.padding.section_padding_heading"
+          },
+          {
+            "type": "range",
+            "id": "padding_top",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_top",
+            "default": 50
+          },
+          {
+            "type": "range",
+            "id": "padding_bottom",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_bottom",
+            "default": 50
+          },
+          {
+            "type": "range",
+            "id": "padding_top_mob",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Mobile Padding Top",
+            "default": 50
+          },
+          {
+            "type": "range",
+            "id": "padding_bottom_mob",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Mobile Padding Bottom",
+            "default": 50
+          }
+    ]
+}
+{% endschema %}

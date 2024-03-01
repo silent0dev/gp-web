@@ -17,6 +17,9 @@ function configureSwipers() {
             navigation: {
                 prevEl: prevButton,
                 nextEl: nextButton,
+            },
+            pagination: {
+                el: swiper.querySelector('.swiper-pagination')
             }
         });
     });
