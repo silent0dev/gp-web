@@ -11,7 +11,7 @@
       <li>
         {%- if link.links != blank -%}
           <header-menu>
-            <details id="Details-HeaderMenu-{{ forloop.index }}">
+            <details id="Details-HeaderMenu-{{ forloop.index }}" {% if link.title == 'Shop' %}style="position: static;"{% endif %}>
               <summary
                 id="HeaderMenu-{{ link.handle }}"
                 class="header__menu-item list-menu__item link focus-inset"
@@ -25,58 +25,111 @@
                 </span>
                 {% render 'icon-caret' %}
               </summary>
-              <ul
-                id="HeaderMenu-MenuList-{{ forloop.index }}"
-                class="header__submenu list-menu list-menu--disclosure color-{{ section.settings.menu_color_scheme }} gradient caption-large motion-reduce global-settings-popup"
-                role="list"
-                tabindex="-1"
-              >
-                {%- for childlink in link.links -%}
-                  <li>
-                    {%- if childlink.links == blank -%}
-                      <a
-                        id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
-                        href="{{ childlink.url }}"
-                        class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"
-                        {% if childlink.current %}
-                          aria-current="page"
-                        {% endif %}
-                      >
-                        {{ childlink.title | escape }}
+              {% if link.title == 'Shop' %}
+                <div id="HeaderMenu-MenuList-{{ forloop.index }}"
+                  class="header__submenu list-menu list-menu--disclosure header__megamenu color-{{ section.settings.menu_color_scheme }} gradient caption-large motion-reduce global-settings-popup"
+                  role="list"
+                  tabindex="-1">
+                  <div class="megamenu-wrapper">
+                    <div class="megamenu-links">
+                      <div class="megamenu-links-inner">
+                        <div class="megamenu-links-item">
+                          <a class="megamenu-links-header" href="/collections/grills-griddles">Grills & Griddles</a>
+                          <a class="megamenu-links-link" href="/products/grill-griddle-combo-with-glass-lid">Grill + Griddle Combo With Glass Lid</a>
+                          <a class="megamenu-links-link" href="/products/large-grill-griddle-combo">Large Grill + Griddle Combo</a>
+                          <a class="megamenu-links-link" href="/products/electric-griddles">Electric Griddles</a>
+                          <a class="megamenu-links-link" href="/products/electric-smokeless-grill">Electric Smokeless Grill</a>
+                        </div>
+                        <div class="megamenu-links-item">
+                          <a class="megamenu-links-header" href="/collections/waffles-crepe-makers">Makers</a>
+                          <a class="megamenu-links-link" href="/products/electric-crepe-maker">Electric Crepe Maker</a>
+                          <a class="megamenu-links-link" href="/products/dual-waffle-maker">Dual Waffle Maker</a>
+                          <a class="megamenu-links-link" href="/products/deep-dish-waffle-maker">Deep Dish Waffle Maker</a>
+                        </div>
+                      </div>
+                      <a class="megamenu-category" href="/collections/shop-all">
+                        Shop All
+                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M12.4652 0L24.9005 12.4503L12.4652 24.9005M24.8723 12.4503H0H24.8723Z" fill="black"/>
+                        </svg>                          
                       </a>
-                    {%- else -%}
-                      <details id="Details-HeaderSubMenu-{{ link.handle }}-{{ childlink.handle }}">
-                        <summary
+                    </div>
+                    <div class="megamenu-links">
+                      <div class="megamenu-links-inner">
+                        <div class="megamenu-links-item">
+                          <a class="megamenu-links-header" href="/collections/multi-cookers">Multi-Cookers</a>
+                          <a class="megamenu-links-link" href="/products/easy-pot-electric-multi-cooker">Easy Pot Electric Multi-cooker</a>
+                        </div>
+                      </div>
+                      <a class="megamenu-category" href="/collections">
+                        Shop By Categories
+                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M12.4652 0L24.9005 12.4503L12.4652 24.9005M24.8723 12.4503H0H24.8723Z" fill="black"/>
+                        </svg>                          
+                      </a>
+                    </div>
+                    <div class="megamenu-image-link">
+                      <a class="megamenu-image-link__image" href="{{ section.settings.megamenu_link }}">
+                        {{ section.settings.megamenu_image | img_url: '250x' | img_tag }}
+                        <span class="megamenu-image-link__text">{{ section.settings.megamenu_text }}</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              {% else %}
+                <ul
+                  id="HeaderMenu-MenuList-{{ forloop.index }}"
+                  class="header__submenu list-menu list-menu--disclosure color-{{ section.settings.menu_color_scheme }} gradient caption-large motion-reduce global-settings-popup"
+                  role="list"
+                  tabindex="-1"
+                >
+                  {%- for childlink in link.links -%}
+                    <li>
+                      {%- if childlink.links == blank -%}
+                        <a
                           id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
-                          class="header__menu-item link link--text list-menu__item focus-inset caption-large"
+                          href="{{ childlink.url }}"
+                          class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"
+                          {% if childlink.current %}
+                            aria-current="page"
+                          {% endif %}
                         >
-                          <span>{{ childlink.title | escape }}</span>
-                          {% render 'icon-caret' %}
-                        </summary>
-                        <ul
-                          id="HeaderMenu-SubMenuList-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
-                          class="header__submenu list-menu motion-reduce"
-                        >
-                          {%- for grandchildlink in childlink.links -%}
-                            <li>
-                              <a
-                                id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
-                                href="{{ grandchildlink.url }}"
-                                class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if grandchildlink.current %} list-menu__item--active{% endif %}"
-                                {% if grandchildlink.current %}
-                                  aria-current="page"
-                                {% endif %}
-                              >
-                                {{ grandchildlink.title | escape }}
-                              </a>
-                            </li>
-                          {%- endfor -%}
-                        </ul>
-                      </details>
-                    {%- endif -%}
-                  </li>
-                {%- endfor -%}
-              </ul>
+                          {{ childlink.title | escape }}
+                        </a>
+                      {%- else -%}
+                        <details id="Details-HeaderSubMenu-{{ link.handle }}-{{ childlink.handle }}">
+                          <summary
+                            id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
+                            class="header__menu-item link link--text list-menu__item focus-inset caption-large"
+                          >
+                            <span>{{ childlink.title | escape }}</span>
+                            {% render 'icon-caret' %}
+                          </summary>
+                          <ul
+                            id="HeaderMenu-SubMenuList-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
+                            class="header__submenu list-menu motion-reduce"
+                          >
+                            {%- for grandchildlink in childlink.links -%}
+                              <li>
+                                <a
+                                  id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
+                                  href="{{ grandchildlink.url }}"
+                                  class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if grandchildlink.current %} list-menu__item--active{% endif %}"
+                                  {% if grandchildlink.current %}
+                                    aria-current="page"
+                                  {% endif %}
+                                >
+                                  {{ grandchildlink.title | escape }}
+                                </a>
+                              </li>
+                            {%- endfor -%}
+                          </ul>
+                        </details>
+                      {%- endif -%}
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              {% endif %}
             </details>
           </header-menu>
         {%- else -%}
