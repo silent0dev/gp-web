@@ -1,5 +1,6 @@
 window.addEventListener('load', function () {
     configureSwipers();
+    configureVideos();
 });
 
 function configureSwipers() {
@@ -17,6 +18,26 @@ function configureSwipers() {
                 prevEl: prevButton,
                 nextEl: nextButton,
             }
+        });
+    });
+}
+
+function configureVideos() {
+    document.querySelectorAll('.video-play').forEach(icon => {
+        icon.addEventListener('click', function(){
+            const videoContainer = this.closest('.product-video-wrapper').querySelector('.product-video');
+            const video = videoContainer.querySelector('video');
+            videoContainer.classList.add('active');
+            video.play();
+        });
+    });
+
+    document.querySelectorAll('.video-pause').forEach(icon => {
+        icon.addEventListener('click', function(){
+            const videoContainer = this.closest('.product-video-wrapper').querySelector('.product-video');
+            const video = videoContainer.querySelector('video');
+            videoContainer.classList.remove('active');
+            video.pause();
         });
     });
 }

@@ -1,0 +1,110 @@
+{% style %}
+.section-{{ section.id }}--padding {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+}
+
+.section-{{ section.id }}--padding .product-video-wrapper {
+    background-image: url({{ product.metafields.custom.cover_image | img_url: '1240x' }});
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 0;
+    position: relative;
+    padding-bottom: 36%;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+@media(max-width: 768px) {
+    .section-{{ section.id }}--padding {
+        padding-top: {{ section.settings.padding_top_mob }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mob }}px;
+    }
+
+    .section-{{ section.id }}--padding .product-video-wrapper {
+        padding-bottom: 100%;
+    }
+}
+{% endstyle %}
+{% if product.metafields.custom.video != blank %}
+<div class="section-{{ section.id }}--padding">
+    <div class="page-width">
+        <div class="product-video-wrapper">
+            <div class="product-video-text">
+                {% if product.metafields.custom.video_header != blank %}
+                    <h2 class="product-video-text__header">{{ product.metafields.custom.video_header }}</h2>
+                {% endif %}
+                {% if product.metafields.custom.video_text != blank %}
+                    <div class="product-video-text__content">{{ product.metafields.custom.video_text | metafield_tag }}</div>
+                {% endif %}
+                <span class="video-play">
+                    {% render 'icon-play' %}
+                </span>
+            </div>
+            <div class="product-video">
+                {{ product.metafields.custom.video | metafield_tag }}
+                <span class="video-pause">
+                    {% render 'icon-close' %}
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% schema %}
+{
+    "name": "Product Video",
+    "settings": [
+        {
+            "type": "header",
+            "content": "t:sections.all.padding.section_padding_heading"
+          },
+          {
+            "type": "range",
+            "id": "padding_top",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_top",
+            "default": 50
+          },
+          {
+            "type": "range",
+            "id": "padding_bottom",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_bottom",
+            "default": 50
+          },
+          {
+            "type": "range",
+            "id": "padding_top_mob",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Mobile Padding Top",
+            "default": 50
+          },
+          {
+            "type": "range",
+            "id": "padding_bottom_mob",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Mobile Padding Bottom",
+            "default": 50
+          }
+    ],
+    "presets": [
+        {
+            "name": "Product Video"
+        }
+    ]
+}
+{% endschema %}

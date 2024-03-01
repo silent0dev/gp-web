@@ -1269,3 +1269,78 @@
         right: 1.2rem !important;
     }
 }
+
+.product-video-text {
+    position: absolute;
+    width: 100%;
+    max-width: 900px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.product-video-text__header {
+    font-size: 36px;
+    line-height: 54px;
+    margin: 0;
+    color: #FFFFFF;
+}
+
+.product-video-text__content {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.video-play, .video-pause {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.video-pause {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    z-index: 5;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    border-radius: 50%;
+    border: 1px solid;
+    padding: 5px;
+    box-shadow: 1px 1px 2px 1px rgba(255, 255, 255, 0.3);
+}
+
+.product-video:not(.active) {
+    display: none;
+}
+
+.product-video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.product-video video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: contain;
+    object-position: center;
+}
+
+@media (max-width: 768px) {
+    .product-video-text__header {
+        font-size: 24px;
+        line-height: 36px;
+    }
+}

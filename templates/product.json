@@ -94,12 +94,23 @@
         "media_fit": "contain",
         "gallery_layout": "thumbnail_slider",
         "media_position": "left",
-        "image_zoom": "none",
+        "image_zoom": "hover",
         "mobile_thumbnails": "show",
         "hide_variants": true,
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 12
+      }
+    },
+    "product-video_zBbCKA": {
+      "type": "product-video",
+      "settings": {
+        "text_color": "#ffffff",
+        "back_color": "#1a1a1a",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_top_mob": 50,
+        "padding_bottom_mob": 50
       }
     },
     "icon_with_text_zBbCKA": {
@@ -174,6 +185,7 @@
   },
   "order": [
     "main",
+    "product-video_zBbCKA",
     "icon_with_text_zBbCKA",
     "related-products"
   ]
