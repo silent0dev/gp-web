@@ -105,8 +105,15 @@
     "product-video_zBbCKA": {
       "type": "product-video",
       "settings": {
-        "text_color": "#ffffff",
-        "back_color": "#1a1a1a",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_top_mob": 50,
+        "padding_bottom_mob": 50
+      }
+    },
+    "product-image-with-text": {
+      "type": "product-image-with-text",
+      "settings": {
         "padding_top": 100,
         "padding_bottom": 100,
         "padding_top_mob": 50,
@@ -186,6 +193,7 @@
   "order": [
     "main",
     "product-video_zBbCKA",
+    "product-image-with-text",
     "icon_with_text_zBbCKA",
     "related-products"
   ]

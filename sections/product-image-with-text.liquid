@@ -2,18 +2,7 @@
 .section-{{ section.id }}--padding {
     padding-top: {{ section.settings.padding_top }}px;
     padding-bottom: {{ section.settings.padding_bottom }}px;
-}
-
-.section-{{ section.id }}--padding .product-video-wrapper {
-    background-image: url({{ product.metafields.custom.cover_image | img_url: '1240x' }});
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 0;
-    position: relative;
-    padding-bottom: 36%;
-    border-radius: 16px;
-    overflow: hidden;
+    background-color: #1A1A1A;
 }
 
 @media(max-width: 768px) {
@@ -21,40 +10,32 @@
         padding-top: {{ section.settings.padding_top_mob }}px;
         padding-bottom: {{ section.settings.padding_bottom_mob }}px;
     }
-
-    .section-{{ section.id }}--padding .product-video-wrapper {
-        padding-bottom: 100%;
-    }
 }
 {% endstyle %}
-{% if product.metafields.custom.video != blank %}
+{% if product.metafields.custom.iwt_image != blank %}
 <div class="section-{{ section.id }}--padding">
     <div class="page-width">
-        <div class="product-video-wrapper">
-            <div class="product-video-text">
-                {% if product.metafields.custom.video_header != blank %}
-                    <h2 class="product-video-text__header">{{ product.metafields.custom.video_header }}</h2>
-                {% endif %}
-                {% if product.metafields.custom.video_text != blank %}
-                    <div class="product-video-text__content">{{ product.metafields.custom.video_text | metafield_tag }}</div>
-                {% endif %}
-                <span class="video-play">
-                    {% render 'icon-play' %}
-                </span>
-            </div>
-            <div class="product-video">
-                {{ product.metafields.custom.video | metafield_tag }}
-                <span class="video-pause">
-                    {% render 'icon-close' %}
-                </span>
-            </div>
+        <div class="product-image-width-text">
+            <h2 class="iwt--header center">{{ product.metafields.custom.iwt_header }}</h2>
+            {% for image in product.metafields.custom.iwt_image.value %}
+                {% assign m = forloop.index0 | modulo: 2 %}
+                <div class="product-iwt--item {% if m == 0 %}reverse{% endif %}">
+                    <div class="iwt--image">
+                        {{ image | img_url: '600x' | img_tag }}
+                    </div>
+                    <div class="iwt--text">
+                        <h4 class="iwt--text__header">{{ product.metafields.custom.iwt_title.value[forloop.index0] }}</h4>
+                        <div class="iwt--text__content">{{ product.metafields.custom.iwt_description.value[forloop.index0] }}</div>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
     </div>
 </div>
 {% endif %}
 {% schema %}
 {
-    "name": "Product Video",
+    "name": "Product Image With Text",
     "settings": [
         {
             "type": "header",
