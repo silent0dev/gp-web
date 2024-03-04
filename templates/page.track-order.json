@@ -3,12 +3,25 @@
     "main": {
       "type": "main-page",
       "settings": {
+        "hidden_title": false,
         "padding_top": 28,
         "padding_bottom": 28
+      }
+    },
+    "custom_rich_text_CwFaw6": {
+      "type": "custom-rich-text",
+      "settings": {
+        "title": "TRACK YOUR ORDER",
+        "description": "<p>We know you can't wait to use your Golden Prarie cookware. Check your order status here!<\/p>",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mob": 40,
+        "padding_bottom_mob": 40
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "custom_rich_text_CwFaw6"
   ]
 }
