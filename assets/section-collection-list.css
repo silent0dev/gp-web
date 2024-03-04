@@ -2,6 +2,9 @@
   margin-top: 100px;
   margin-bottom: 100px;
 }
+.template--index .collection-list {
+  margin: 0;
+}
 
 .collection-list-title {
   margin: 0;
