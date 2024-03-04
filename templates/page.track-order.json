@@ -1,13 +1,5 @@
 {
   "sections": {
-    "main": {
-      "type": "main-page",
-      "settings": {
-        "hidden_title": false,
-        "padding_top": 28,
-        "padding_bottom": 28
-      }
-    },
     "custom_rich_text_CwFaw6": {
       "type": "custom-rich-text",
       "settings": {
@@ -21,7 +13,6 @@
     }
   },
   "order": [
-    "main",
     "custom_rich_text_CwFaw6"
   ]
 }
