@@ -204,32 +204,19 @@
         "padding_bottom_mob": 30
       }
     },
-    "image_banner_Kn6cmn": {
-      "type": "image-banner",
-      "blocks": {
-        "heading_dkfVTn": {
-          "type": "heading",
-          "settings": {
-            "heading": "Transform kitchens into heavens of culinary delight",
-            "heading_size": "h1"
-          }
-        }
-      },
-      "block_order": [
-        "heading_dkfVTn"
-      ],
+    "video_ytHwrQ": {
+      "type": "video",
       "settings": {
-        "image": "shopify:\/\/shop_images\/125A_1.png",
-        "image_overlay_opacity": 0,
-        "image_height": "medium",
-        "desktop_content_position": "middle-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
+        "heading": "",
+        "heading_size": "h1",
+        "enable_video_looping": true,
+        "video": "shopify:\/\/files\/videos\/d1f5fdf331574c2ca982dca8b1fdb86b.mp4",
+        "video_url": "",
+        "description": "",
+        "full_width": false,
         "color_scheme": "scheme-2",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "featured_collection_xBXGfH": {
@@ -361,21 +348,6 @@
         "padding_top_mob": 30,
         "padding_bottom_mob": 30
       }
-    },
-    "video_ytHwrQ": {
-      "type": "video",
-      "settings": {
-        "heading": "",
-        "heading_size": "h1",
-        "enable_video_looping": true,
-        "video": "shopify:\/\/files\/videos\/d1f5fdf331574c2ca982dca8b1fdb86b.mp4",
-        "video_url": "",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "scheme-2",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
     }
   },
   "order": [
@@ -383,11 +355,10 @@
     "free_shipping_ED6rbQ",
     "collection_list_rPMK7E",
     "featured_products_slider_xqEjj6",
-    "image_banner_Kn6cmn",
+    "video_ytHwrQ",
     "featured_collection_xBXGfH",
     "icon_with_text_iWwY7j",
     "review_bqTR9X",
-    "about_us_GKBcXF",
-    "video_ytHwrQ"
+    "about_us_GKBcXF"
   ]
 }
