@@ -1930,3 +1930,30 @@
         transform: translateX(-50%);
     }
 }
+
+.video-section__media .deferred-media__poster-button {
+    width: 80%;
+    height: auto;
+    max-width: 850px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.deferred-media__poster-text {
+    font-size: 50px;
+    line-height: 75px;
+}
+
+@media (max-width: 768px) {
+    .video-section__media.deferred-media {
+        padding: 0 !important;
+        min-height: 350px;
+    }
+
+    .deferred-media__poster-text {
+        font-size: 24px;
+        line-height: 36px;
+    }
+}

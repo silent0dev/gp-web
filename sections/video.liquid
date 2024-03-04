@@ -103,9 +103,14 @@
         {%- else -%}
           {{ 'hero-apparel-3' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
         {%- endif -%}
-        <span class="deferred-media__poster-button motion-reduce">
+        <div class="deferred-media__poster-button motion-reduce">
+          {% if section.settings.text != blank %}
+            <h2 class="deferred-media__poster-text">
+              {{ section.settings.text }}
+            </h2>
+          {% endif %}
           {%- render 'icon-play' -%}
-        </span>
+        </div>
       </button>
       <template>
         {%- if section.settings.video == null and section.settings.video_url != null -%}
@@ -182,6 +187,12 @@
       ],
       "default": "h1",
       "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "Transform kitchens into heavens of culinary delight"
     },
     {
       "type": "checkbox",
