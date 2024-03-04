@@ -1957,3 +1957,9 @@
         line-height: 36px;
     }
 }
+
+.menu-drawer__account .icon {
+    width: 2rem;
+    height: 2rem;
+    margin-left: 1rem;
+}
