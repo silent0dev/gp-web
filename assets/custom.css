@@ -806,7 +806,7 @@
 
 .faq-list {
     max-width: 80rem;
-    margin: 80px auto 0;
+    margin: 50px auto 0;
 }
 
 .faq-question {
@@ -1246,6 +1246,7 @@
     display: inline-block;
     width: calc(100% - 160px);
     margin-bottom: 0 !important;
+    transform: translateY(3px);
 }
 
 .shopify-payment-button {
