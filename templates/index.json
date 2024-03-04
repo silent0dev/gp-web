@@ -198,7 +198,7 @@
         "product_pazMiN"
       ],
       "settings": {
-        "padding_top": 90,
+        "padding_top": 0,
         "padding_bottom": 90,
         "padding_top_mob": 30,
         "padding_bottom_mob": 30
