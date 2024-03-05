@@ -1863,7 +1863,7 @@ input[type='checkbox'] {
   font-weight: var(--font-body-weight);
   font-size: 1.6rem;
   font-weight: 500;
-  opacity: 0.85;
+  opacity: 1;
   text-align: center;
   background-color: transparent;
   border: 0;
