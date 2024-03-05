@@ -2007,3 +2007,14 @@
     height: 2rem;
     margin-left: 1rem;
 }
+
+.product-card-wrapper .card {
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    padding-top: 25px;
+}
+
+.product-card-wrapper .card__inner {
+    width: 90%;
+    margin: 0 auto;
+}
