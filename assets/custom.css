@@ -198,7 +198,7 @@
 }
 
 .featured-product__text {
-    padding-right: 100px;
+    padding-right: 130px;
 }
 
 .featured-product__subtitle {
@@ -243,6 +243,12 @@
 .featured-products-slider .swiper-button {
     top: auto;
     bottom: 10px;
+}
+
+@media (max-width: 1250px) {
+    .featured-products-slider .swiper-button {
+        bottom: -20px;
+    }
 }
 
 @media (max-width: 768px) {
