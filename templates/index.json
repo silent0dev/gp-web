@@ -209,6 +209,7 @@
       "settings": {
         "heading": "",
         "heading_size": "h1",
+        "text": "Transform kitchens into heavens of culinary delight",
         "enable_video_looping": true,
         "video": "shopify:\/\/files\/videos\/d1f5fdf331574c2ca982dca8b1fdb86b.mp4",
         "video_url": "",
@@ -235,7 +236,7 @@
         "view_all_style": "solid",
         "enable_desktop_slider": true,
         "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
+        "image_ratio": "square",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
